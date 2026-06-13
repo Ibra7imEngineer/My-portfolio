@@ -1,0 +1,71 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f6fff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c744f0;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" fill="#05030a" rx="100"/>
+  
+  <!-- Subtle background pattern -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="url(#grad1)" stroke-width="1" opacity="0.2"/>
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#grad2)" stroke-width="1" opacity="0.15"/>
+  
+  <!-- Accent border -->
+  <rect width="512" height="512" fill="none" stroke="url(#grad1)" stroke-width="8" rx="100" opacity="0.4"/>
+  
+  <!-- Main letter shapes with filter -->
+  <g filter="url(#glow)">
+    <!-- Left "I" -->
+    <g>
+      <rect x="80" y="120" width="64" height="256" rx="12" fill="url(#grad1)"/>
+      <rect x="60" y="100" width="104" height="28" rx="8" fill="url(#grad1)" opacity="0.8"/>
+    </g>
+    
+    <!-- Right "M" -->
+    <g>
+      <path d="M 256 120 L 280 256 L 304 120 L 368 120 L 368 376 Q 368 395 348 395 L 316 395 Q 296 395 296 376 L 296 200 L 256 340 L 216 200 L 216 376 Q 216 395 196 395 L 164 395 Q 144 395 144 376 L 144 120 Z" 
+            fill="url(#grad2)" opacity="0.9"/>
+    </g>
+    
+    <!-- Right accent "M" overlapping -->
+    <g opacity="0.6">
+      <rect x="364" y="120" width="64" height="256" rx="12" fill="url(#grad2)"/>
+    </g>
+  </g>
+  
+  <!-- Center vertical accent line -->
+  <line x1="256" y1="140" x2="256" y2="372" stroke="url(#grad1)" stroke-width="6" opacity="0.5" stroke-linecap="round"/>
+  
+  <!-- Data visualization element (bottom) -->
+  <g fill="url(#grad1)" opacity="0.5">
+    <rect x="80" y="420" width="16" height="40" rx="4" transform="translate(0, -5)"/>
+    <rect x="120" y="420" width="16" height="60" rx="4" transform="translate(0, -10)"/>
+    <rect x="160" y="420" width="16" height="50" rx="4" transform="translate(0, -8)"/>
+  </g>
+  
+  <!-- Analytics indicators (top right corner) -->
+  <g stroke="url(#grad2)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6">
+    <polyline points="400,140 420,120 440,160"/>
+  </g>
+  
+  <!-- Accent dots (right side) -->
+  <g fill="url(#grad1)" opacity="0.4">
+    <circle cx="432" cy="360" r="8"/>
+    <circle cx="456" cy="380" r="6"/>
+    <circle cx="420" cy="400" r="5"/>
+  </g>
+</svg>

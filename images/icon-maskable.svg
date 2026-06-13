@@ -1,0 +1,32 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f6fff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c744f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Maskable icon - solid background required -->
+  <rect width="512" height="512" fill="#0f6fff"/>
+  
+  <!-- Main monogram "IM" -->
+  <g>
+    <!-- Left "I" -->
+    <rect x="100" y="140" width="80" height="280" rx="14" fill="white"/>
+    <rect x="75" y="110" width="130" height="40" rx="10" fill="white" opacity="0.9"/>
+    
+    <!-- Right "M" -->
+    <path d="M 280 140 L 310 280 L 340 140 L 410 140 L 410 420 Q 410 445 380 445 L 340 445 Q 310 445 310 420 L 310 230 L 280 380 L 250 230 L 250 420 Q 250 445 220 445 L 180 445 Q 150 445 150 420 L 150 140 Z" 
+          fill="white"/>
+    
+    <!-- Right accent box -->
+    <rect x="400" y="140" width="80" height="280" rx="14" fill="white" opacity="0.85"/>
+  </g>
+  
+  <!-- Center accent -->
+  <rect x="290" y="160" width="20" height="240" rx="4" fill="url(#grad1)" opacity="0.7"/>
+</svg>

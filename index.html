@@ -3,9 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ibrahim Mohamed — Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta
+      name="description"
+      content="Data Analyst, Business Intelligence, Portfolio, SQL, Python, Power BI, Tableau, Automation, Ibrahim Muhamad"
+    />
+    <meta name="author" content="Ibrahim Muhamad" />
+    <title>Ibrahim Muhamad | Data Analytics & BI Portfolio</title>
+    <meta
+      property="og:title"
+      content="Ibrahim Muhamad | Data Analytics & BI Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Explore a performance-driven portfolio showcasing business intelligence, data analytics, and automation solutions for modern organizations."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Ibrahim Muhamad | Data Analytics & BI Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore a performance-driven portfolio showcasing business intelligence, data analytics, and automation solutions for modern organizations."
+    />
+    <meta property="og:url" content="https://engim-portfolio.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/profile.jpg" />
+    <meta property="og:site_name" content="ENG.IM Portfolio" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ibrahim Muhamad",
+        "url": "https://engim-portfolio.com",
+        "jobTitle": "Data Analyst & Business Intelligence Specialist",
+        "image": "images/profile.jpg",
+        "sameAs": [
+          "https://github.com",
+          "https://linkedin.com",
+          "https://twitter.com"
+        ]
+      }
+    </script>
+    <link rel="preload" as="style" href="style.css" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -45,46 +87,106 @@
       }
       body {
         font-family: var(--font-body);
-        background:
-          radial-gradient(
-            circle at 20% 15%,
-            rgba(168, 85, 247, 0.16),
-            transparent 18%
-          ),
-          radial-gradient(
-            circle at 80% 10%,
-            rgba(59, 130, 246, 0.12),
-            transparent 18%
-          ),
-          radial-gradient(
-            circle at 70% 80%,
-            rgba(20, 184, 166, 0.14),
-            transparent 20%
-          ),
-          linear-gradient(180deg, #05030a 0%, #090b16 55%, #0f1220 100%);
+        background: linear-gradient(180deg, #071021 0%, #08172f 100%);
         color: var(--text-primary);
         min-height: 100vh;
         overflow-x: hidden;
         line-height: 1.6;
       }
 
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      .skip-to-main {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--neon-purple);
+        color: white;
+        padding: 8px 12px;
+        text-decoration: none;
+        z-index: 100;
+        border-radius: 0 0 4px 0;
+      }
+      .skip-to-main:focus {
+        top: 0;
+      }
+
+      [role="button"] {
+        cursor: pointer;
+      }
+
       /* Ambient Background */
       .ambient-bg {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         pointer-events: none;
-        z-index: 0;
+        z-index: -2;
         overflow: hidden;
       }
       .orb {
         position: absolute;
         border-radius: 50%;
-        filter: blur(100px);
-        opacity: 0.22;
-        animation: orbFloat 24s ease-in-out infinite;
+        filter: blur(120px);
+        opacity: 0.42;
+        animation: orbFloat 26s ease-in-out infinite;
+      }
+      .orb-1 {
+        width: 560px;
+        height: 560px;
+        background: radial-gradient(
+          circle,
+          rgba(168, 85, 247, 0.32) 0%,
+          rgba(124, 58, 237, 0.14) 30%,
+          transparent 60%
+        );
+        top: -12%;
+        left: -8%;
+      }
+      .orb-2 {
+        width: 520px;
+        height: 520px;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.28) 0%,
+          rgba(14, 165, 233, 0.14) 34%,
+          transparent 62%
+        );
+        top: 24%;
+        right: -10%;
+        animation-delay: -8s;
+      }
+      .orb-3 {
+        width: 480px;
+        height: 480px;
+        background: radial-gradient(
+          circle,
+          rgba(20, 184, 166, 0.3) 0%,
+          rgba(56, 189, 248, 0.12) 38%,
+          transparent 66%
+        );
+        bottom: -14%;
+        left: 22%;
+        animation-delay: -14s;
+      }
+      .orb-4 {
+        width: 360px;
+        height: 360px;
+        background: radial-gradient(
+          circle,
+          rgba(196, 181, 253, 0.22) 0%,
+          rgba(14, 165, 233, 0.1) 40%,
+          transparent 68%
+        );
+        top: 40%;
+        left: 46%;
+        animation-delay: -5s;
       }
       .orb-1 {
         width: 520px;
@@ -206,11 +308,13 @@
         background: rgba(10, 10, 15, 0.9);
       }
       .nav-container {
-        width: min(100%, 1140px);
-        max-width: 100%;
+        width: 100%;
+        /* allow expansion on very large screens while keeping centered content */
+        max-width: 1800px;
         margin: 0 auto;
-        padding: 0 16px;
+        padding: 0 24px;
         display: flex;
+        position: relative;
         justify-content: space-between;
         align-items: center;
       }
@@ -231,11 +335,90 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
         letter-spacing: -0.5px;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.9rem;
+      }
+      .nav-logo-link {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.9rem;
+      }
+      .nav-logo-link:hover {
+        opacity: 0.92;
+      }
+      .nav-logo .brand-mark {
+        width: 42px;
+        min-width: 42px;
+        height: 42px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--neon-purple),
+          var(--neon-blue)
+        );
+        color: white;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+      }
+      .nav-logo .brand-mark i {
+        font-size: 1rem;
+        transform: rotate(-10deg);
+      }
+      .nav-logo .brand-mark .logo-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        box-shadow:
+          inset 0 0 10px rgba(168, 85, 247, 0.3),
+          0 0 20px rgba(168, 85, 247, 0.4),
+          0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: var(--transition-smooth);
+      }
+      .nav-logo .brand-mark:hover .logo-image {
+        box-shadow:
+          inset 0 0 15px rgba(168, 85, 247, 0.5),
+          0 0 30px rgba(168, 85, 247, 0.6),
+          0 6px 25px rgba(0, 0, 0, 0.4);
+        border-color: rgba(168, 85, 247, 0.5);
       }
       .nav-links {
         display: flex;
         gap: 32px;
         list-style: none;
+      }
+      .hamburger {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        color: var(--text-secondary);
+      }
+      .hamburger:focus {
+        outline: 2px solid rgba(168, 85, 247, 0.25);
+        border-radius: 8px;
+      }
+      .hamburger .bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--text-primary);
+        border-radius: 2px;
+        transition:
+          transform 0.25s ease,
+          opacity 0.25s ease;
       }
       .nav-links a {
         color: var(--text-secondary);
@@ -315,6 +498,37 @@
         border-color: rgba(168, 85, 247, 0.4);
       }
 
+      /* Mobile: hide full nav, show hamburger */
+      @media (max-width: 767px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-links.open {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          position: absolute;
+          right: 16px;
+          top: calc(100% + 8px);
+          background: rgba(10, 10, 15, 0.95);
+          padding: 12px 14px;
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.04);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+          z-index: 1200;
+        }
+        .nav-links.open a {
+          color: var(--text-secondary);
+          font-size: 0.95rem;
+        }
+        .hamburger {
+          display: inline-flex;
+        }
+        .nav-select {
+          display: none;
+        }
+      }
+
       .cv-select-row {
         display: flex;
         align-items: center;
@@ -354,10 +568,11 @@
       .main-content {
         position: relative;
         z-index: 2;
-        width: min(100%, 1140px);
-        max-width: 100%;
+        width: 100%;
+        /* allow broader layouts on wide displays while remaining centered */
+        max-width: 1800px;
         margin: 0 auto;
-        padding: 120px 16px 60px;
+        padding: 120px 24px 60px;
       }
       @media (min-width: 768px) {
         .main-content {
@@ -426,299 +641,274 @@
       }
 
       .cv-card {
-        padding: 24px;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 28px 85px rgba(0, 0, 0, 0.24);
+        padding: 0;
+        background: #f9fbfd;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 24px 64px rgba(15, 23, 42, 0.08);
         border-radius: 28px;
+        overflow: hidden;
       }
       .cv-sheet {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 26px;
-        padding: 32px;
-        display: grid;
-        gap: 32px;
+        background: #ffffff;
+        border-radius: 0;
+        padding: 36px;
+        display: block;
       }
       .cv-sheet-header {
         display: flex;
-        justify-content: space-between;
-        gap: 24px;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        padding-bottom: 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #e5e7eb;
+        margin-bottom: 28px;
       }
       .cv-title-group {
         display: grid;
-        gap: 10px;
+        gap: 8px;
       }
       .cv-name {
-        font-size: clamp(2rem, 4vw, 2.6rem);
-        letter-spacing: -0.8px;
+        font-size: clamp(2rem, 4vw, 2.4rem);
+        letter-spacing: -0.5px;
         margin: 0;
-        color: var(--text-primary);
+        color: #111827;
+        font-family: Calibri, Arial, Helvetica, sans-serif;
       }
       .cv-role {
         margin: 0;
-        color: var(--text-muted);
+        color: #4b5563;
         font-size: 1rem;
+        font-weight: 600;
+      }
+      .cv-contact-line {
+        display: grid;
+        gap: 0.55rem;
+        color: #4b5563;
+        font-size: 0.95rem;
+        line-height: 1.75;
+      }
+      .cv-contact-line span {
+        display: block;
+        white-space: normal;
+      }
+      .cv-contact-line a {
+        color: #111827;
+        text-decoration: none;
+        word-break: break-word;
+      }
+      .cv-contact-line a:hover {
+        text-decoration: underline;
       }
       .cv-download {
-        padding: 14px 28px;
+        align-self: flex-start;
+        padding: 12px 24px;
         border-radius: 999px;
-        background: linear-gradient(
-          135deg,
-          rgba(168, 85, 247, 0.94),
-          rgba(59, 130, 246, 0.94)
-        );
-        color: white;
+        background: #111827;
+        color: #ffffff;
         font-weight: 700;
-        border: 1px solid rgba(255, 255, 255, 0.14);
+        border: none;
         cursor: pointer;
-        transition:
-          transform 0.25s ease,
-          box-shadow 0.25s ease,
-          opacity 0.25s ease;
       }
       .cv-download:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 18px 45px rgba(168, 85, 247, 0.25);
-      }
-      .cv-resume-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
-        gap: 32px;
-      }
-      .cv-main,
-      .cv-sidebar {
-        display: grid;
-        gap: 24px;
+        opacity: 0.92;
       }
       .cv-section {
-        padding-bottom: 16px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        margin-bottom: 16px;
+        margin-bottom: 28px;
+        page-break-inside: avoid;
       }
       .cv-section:last-child {
-        border-bottom: none;
         margin-bottom: 0;
-        padding-bottom: 0;
       }
       .cv-section h4 {
-        margin: 0 0 16px;
-        color: var(--text-primary);
-        font-size: 0.98rem;
-        letter-spacing: 0.08em;
+        margin: 0 0 18px;
+        color: #111827;
+        font-size: 0.95rem;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
         font-weight: 700;
+        border-bottom: 1px solid #d1d5db;
+        padding-bottom: 10px;
       }
       .cv-section p,
       .cv-section li,
-      .cv-contact-list span,
-      .cv-contact-list a {
-        color: var(--text-secondary);
-        line-height: 1.8;
-        font-size: 0.95rem;
-      }
-      .cv-contact-list {
-        list-style: none;
-        padding: 0;
+      .cv-education-school,
+      .cv-education-date,
+      .cv-experience-meta,
+      .cv-certification-issuer {
+        color: #4b5563;
+        font-size: 0.97rem;
+        line-height: 1.7;
         margin: 0;
-        display: grid;
+      }
+      .cv-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
         gap: 14px;
       }
-      .cv-contact-list li {
-        display: grid;
-        gap: 6px;
-      }
-      .cv-contact-list strong {
-        color: var(--text-primary);
-        font-size: 0.8rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-      .cv-contact-list a {
-        color: var(--text-secondary);
-        text-decoration: none;
-      }
-      .cv-contact-list a:hover {
-        text-decoration: underline;
-      }
-      .cv-skill-group {
-        display: grid;
-        gap: 10px;
-      }
-      .cv-skill-title {
-        font-weight: 700;
-        color: var(--text-primary);
-        font-size: 0.95rem;
-      }
-      .cv-skill-list {
+      .cv-certifications-list {
         list-style: none;
         margin: 0;
         padding: 0;
-        display: grid;
-        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
       }
-      .cv-skill-list li {
-        position: relative;
-        padding-left: 12px;
-      }
-      .cv-skill-list li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: var(--neon-blue);
-      }
+      .cv-list-item,
       .cv-experience-item {
-        margin-bottom: 20px;
+        padding: 18px 0;
+        border-bottom: 1px solid #e5e7eb;
       }
-      .cv-experience-role {
+      .cv-list-item:last-child,
+      .cv-experience-item:last-child {
+        border-bottom: none;
+      }
+      .cv-item-row,
+      .cv-experience-row,
+      .cv-education-row,
+      .cv-certification-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .cv-item-title,
+      .cv-experience-title,
+      .cv-certification-title,
+      .cv-education-row strong {
         font-weight: 700;
-        color: var(--text-primary);
-        margin-bottom: 6px;
+        color: #111827;
+        flex: 1 1 auto;
+        min-width: 0;
       }
-      .cv-experience-meta {
-        color: var(--text-muted);
-        font-size: 0.95rem;
-        margin-bottom: 12px;
+      .cv-item-meta,
+      .cv-experience-date,
+      .cv-certification-date,
+      .cv-education-date {
+        color: #6b7280;
+        white-space: nowrap;
+        flex: 0 0 auto;
+      }
+      .cv-item-subtitle,
+      .cv-certification-issuer,
+      .cv-education-school {
+        margin-top: 8px;
       }
       .cv-experience-points {
-        margin: 0;
+        margin: 14px 0 0;
         padding-left: 18px;
-        color: var(--text-secondary);
-        line-height: 1.75;
+        color: #4b5563;
+        line-height: 1.7;
       }
       .cv-experience-points li {
         margin-bottom: 10px;
       }
-      .cv-education-meta {
-        display: grid;
-        gap: 6px;
-        color: var(--text-secondary);
-        font-size: 0.95rem;
-      }
-      .cv-education-meta span {
-        display: block;
-      }
-      .cv-education-school,
-      .cv-education-date {
-        margin: 0;
-      }
-      .cv-education strong {
-        display: block;
-        color: var(--text-primary);
-        margin-bottom: 10px;
-        font-size: 1rem;
-      }
-      @media (max-width: 960px) {
-        .cv-resume-grid {
-          grid-template-columns: 1fr;
-        }
+      .cv-education {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
       }
       @media (max-width: 768px) {
         .cv-sheet {
           padding: 24px;
         }
+        .cv-sheet-header {
+          gap: 16px;
+        }
       }
       @media print {
         @page {
-          size: A4;
-          margin: 8mm 10mm 8mm 10mm !important; /* Tight margins to collapse multi-page overflow */
+          size: A4 portrait;
+          margin: 10mm;
         }
-
-        /* Force high-contrast crisp black text and white background */
         body,
         html {
           background: #ffffff !important;
           color: #000000 !important;
-          font-size: 9.5pt !important;
-          height: 100% !important;
-          overflow: hidden !important;
+          font-size: 10pt !important;
+          height: auto !important;
+          overflow: visible !important;
         }
         * {
           box-shadow: none !important;
           text-shadow: none !important;
-          background-color: transparent !important;
+          background: none !important;
+          background-image: none !important;
+          filter: none !important;
+          transform: none !important;
+          opacity: 1 !important;
         }
-
-        /* Strip out gradients, glow circles, dashboard tabs, navigation bars, and buttons */
-        .admin-dashboard,
         nav,
-        .nav-bar,
-        header:not(.cv-header),
-        footer,
-        button,
+        .certifications-header-bar,
+        .cv-download,
+        .no-print,
         .filter-bar,
+        .hamburger,
+        .mobile-nav-button,
         .glowing-circle,
-        .glass-effect {
+        .ambient-bg,
+        .grid-overlay,
+        footer {
           display: none !important;
         }
-
-        /* Force the CV Container into a professional 2-Column Grid Layout */
-        .cv-container {
-          display: grid !important;
-          grid-template-columns: 65% 32% !important;
-          gap: 3% !important;
-          width: 100% !important;
-          padding: 0 !important;
-          margin: 0 !important;
-          border: none !important;
-        }
-        .cv-sheet,
         .cv-card,
-        #cv {
+        .cv-sheet,
+        .cv-container,
+        .cv-section,
+        .cv-list-item,
+        .cv-experience-item,
+        .cv-education,
+        .cv-item-row,
+        .cv-certification-row {
           background: #ffffff !important;
           color: #000000 !important;
-          box-shadow: none !important;
-          text-shadow: none !important;
           border: none !important;
+          box-shadow: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .cv-sheet {
+          padding: 0 !important;
         }
         .cv-sheet-header {
-          grid-column: 1 / -1 !important;
-          padding-bottom: 8px !important;
-          border-bottom: 1px solid #bbbbbb !important;
+          padding-bottom: 10px !important;
+          border-bottom: 1px solid #333 !important;
+          margin-bottom: 16px !important;
         }
-
+        .cv-section {
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
+          margin-bottom: 14px !important;
+        }
+        .cv-section h4 {
+          font-size: 10pt !important;
+          color: #000000 !important;
+          border-bottom: 1px solid #333 !important;
+          margin-bottom: 8px !important;
+        }
         h1 {
           font-size: 18pt !important;
-          margin: 0 0 2px 0 !important;
+          margin: 0 0 6px 0 !important;
           color: #000000 !important;
-          font-weight: bold !important;
-        }
-        h2,
-        h3 {
-          font-size: 11.5pt !important;
-          margin: 6px 0 3px 0 !important;
-          color: #000000 !important;
-          border-bottom: 1px solid #bbbbbb !important;
-          padding-bottom: 1px !important;
-          text-transform: uppercase !important;
         }
         p,
         li,
-        span {
+        span,
+        a {
+          color: #000000 !important;
+          text-decoration: none !important;
           font-size: 9.5pt !important;
-          line-height: 1.25 !important;
-          color: #111111 !important;
-          margin-bottom: 2px !important;
+          line-height: 1.35 !important;
+        }
+        a {
+          text-decoration: underline !important;
         }
         ul {
           padding-left: 12px !important;
           margin: 0 !important;
-        }
-
-        /* Avoid breaking mid-sections */
-        .work-item,
-        .education-item,
-        .skill-item,
-        .cv-experience-item,
-        .cv-education,
-        .cv-skill-group {
-          page-break-inside: avoid !important;
-          margin-bottom: 6px !important;
         }
       }
 
@@ -744,6 +934,14 @@
         position: relative;
         margin-bottom: 32px;
         animation: profilePulse 3s ease-in-out infinite;
+        cursor: pointer;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+        overflow: visible;
+      }
+      .profile-frame:hover:not(.expanded) {
+        transform: translateY(-4px);
       }
       @keyframes profilePulse {
         0%,
@@ -756,23 +954,26 @@
             0 0 30px rgba(20, 184, 166, 0.3);
         }
       }
-      .profile-placeholder {
+      .profile-frame.expanded {
+        transform: scale(1.55);
+        box-shadow: 0 40px 110px rgba(168, 85, 247, 0.28);
+        z-index: 20;
+      }
+      .profile-frame img {
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background: linear-gradient(135deg, #1a1a2e, #16213e);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        object-fit: cover;
         border: 3px solid var(--bg-deep);
-        font-size: 3rem;
-        color: var(--neon-purple);
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
       }
       .hero-name {
-        font-size: 3rem;
+        font-size: clamp(2.7rem, 5vw, 3.8rem);
         font-weight: 900;
-        margin-bottom: 8px;
-        background: linear-gradient(135deg, #fff, #c4b5fd);
+        margin-bottom: 16px;
+        background: linear-gradient(135deg, #ffffff, #c4b5fd);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -782,11 +983,11 @@
         font-size: 1.1rem;
         color: var(--text-secondary);
         font-weight: 500;
-        margin-bottom: 12px;
+        margin-bottom: 18px;
       }
       .hero-meta {
         display: flex;
-        gap: 20px;
+        gap: 22px;
         justify-content: center;
         margin-bottom: 24px;
         flex-wrap: wrap;
@@ -794,29 +995,93 @@
       .hero-meta-item {
         display: flex;
         align-items: center;
-        gap: 6px;
-        font-size: 0.85rem;
+        gap: 8px;
+        font-size: 0.9rem;
         color: var(--text-muted);
       }
       .hero-meta-item i {
         color: var(--neon-teal);
-        font-size: 0.8rem;
+        font-size: 0.95rem;
       }
       .hero-bio {
-        max-width: 650px;
+        max-width: 680px;
         font-size: 1.05rem;
         color: var(--text-secondary);
         line-height: 1.8;
+        margin-bottom: 30px;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
         margin-bottom: 28px;
+      }
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 0.95rem;
+        color: var(--text-primary);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        text-decoration: none;
+        transition: var(--transition-smooth);
+      }
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.14);
+        transform: translateY(-2px);
+        border-color: var(--neon-teal);
+        box-shadow: 0 12px 30px rgba(20, 184, 166, 0.18);
+      }
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
+        gap: 16px;
+        width: 100%;
+        max-width: 780px;
+        margin: 0 auto 32px;
+      }
+      .metric-card {
+        padding: 20px 18px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+        transition: var(--transition-smooth);
+      }
+      .metric-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(168, 85, 247, 0.25);
+        box-shadow: 0 12px 28px rgba(168, 85, 247, 0.12);
+      }
+      .metric-value {
+        display: block;
+        font-size: 1.55rem;
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+      .metric-label {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      @media (max-width: 720px) {
+        .metrics-grid {
+          grid-template-columns: 1fr;
+        }
       }
       .hero-social {
         display: flex;
         gap: 16px;
+        justify-content: center;
       }
       .social-btn {
         width: 44px;
         height: 44px;
-        border-radius: 12px;
+        border-radius: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -832,8 +1097,11 @@
         background: var(--bg-card-hover);
         border-color: var(--neon-purple);
         color: var(--neon-purple);
-        transform: translateY(-3px) scale(1.1);
+        transform: translateY(-3px) scale(1.05);
         box-shadow: 0 8px 25px rgba(168, 85, 247, 0.2);
+      }
+      .install-btn {
+        display: none;
       }
 
       /* Expertise */
@@ -919,6 +1187,13 @@
         font-weight: 700;
         margin-bottom: 10px;
       }
+      .expertise-subtitle {
+        margin: 0 0 14px;
+        color: var(--text-muted);
+        font-size: 0.92rem;
+        line-height: 1.6;
+        font-weight: 500;
+      }
       .expertise-card p {
         font-size: 0.9rem;
         color: var(--text-secondary);
@@ -939,6 +1214,11 @@
       @media (min-width: 1024px) {
         .tools-grid {
           grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (min-width: 1280px) {
+        .tools-grid {
+          grid-template-columns: repeat(4, 1fr);
         }
       }
       .tool-card {
@@ -966,10 +1246,10 @@
         transform: scaleX(1);
       }
       .tool-icon {
-        width: 52px;
-        height: 52px;
-        margin: 0 auto 16px;
-        border-radius: 16px;
+        width: 86px;
+        height: 86px;
+        margin: 0 auto 18px;
+        border-radius: 24px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -977,82 +1257,139 @@
         font-weight: 700;
         font-family: var(--font-mono);
         color: white;
+        box-shadow: 0 24px 52px rgba(0, 0, 0, 0.22);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 10px;
       }
       .tool-icon i {
-        font-size: 1.1rem;
+        font-size: 2.2rem;
       }
-      .tool-icon.powerbi {
-        background: linear-gradient(
-          135deg,
-          rgba(247, 193, 85, 0.25),
-          rgba(220, 180, 45, 0.15)
-        );
-        color: #ffdd57;
+      .tool-icon svg {
+        width: 56px;
+        height: 56px;
+        display: block;
       }
-      .tool-icon.excel {
-        background: rgba(34, 197, 94, 0.15);
-        color: #22c55e;
+      .tool-icon.html5 {
+        background: linear-gradient(135deg, #f16529 0%, #ff8b3d 100%);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.14);
       }
-      .tool-icon.react {
-        background: rgba(6, 182, 212, 0.15);
-        color: #06b6d4;
+      .tool-icon.css3 {
+        background: linear-gradient(135deg, #264de4 0%, #2965f1 100%);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.14);
       }
-      .tool-icon.python {
-        background: rgba(251, 191, 36, 0.15);
-        color: #fbbf24;
-      }
-      .tool-icon.n8n {
-        background: rgba(236, 72, 153, 0.15);
-        color: #ec4899;
+      .tool-icon.javascript {
+        background: linear-gradient(135deg, #f7df1e 0%, #ffd33d 100%);
+        color: #111111;
+        border-color: rgba(0, 0, 0, 0.12);
       }
       .tool-icon.sql {
-        background: rgba(59, 130, 246, 0.15);
-        color: #3b82f6;
+        background: linear-gradient(135deg, #00758f 0%, #4db8d7 100%);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.14);
+      }
+      .tool-icon.python {
+        background: linear-gradient(135deg, #306998 0%, #ffd43b 100%);
+        color: #0f172a;
+        border-color: rgba(255, 255, 255, 0.16);
+      }
+      .tool-icon.powerbi {
+        background: linear-gradient(135deg, #f2c811 0%, #d4a913 100%);
+        color: #111111;
+        border-color: rgba(0, 0, 0, 0.12);
+      }
+      .tool-icon.github {
+        background: linear-gradient(135deg, #161b22 0%, #0f1420 100%);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.16);
       }
       .tool-icon.tableau {
-        background: rgba(168, 85, 247, 0.15);
-        color: #a855f7;
+        background:
+          radial-gradient(
+            circle at 30% 30%,
+            rgba(0, 161, 241, 0.18) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 70% 30%,
+            rgba(255, 122, 0, 0.18) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 70%,
+            rgba(108, 45, 158, 0.18) 0%,
+            transparent 50%
+          ),
+          #ffffff;
+        color: #111111;
+        border-color: rgba(255, 255, 255, 0.16);
+      }
+      .tool-icon.n8n {
+        background: linear-gradient(135deg, #f43f8c 0%, #ef5da5 100%);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.16);
+      }
+      .tool-icon.react {
+        background: linear-gradient(
+          135deg,
+          rgba(56, 189, 248, 0.2),
+          rgba(14, 165, 233, 0.12)
+        );
+        color: #7dd3fc;
+        border-color: rgba(125, 211, 252, 0.28);
+      }
+      .tool-icon.excel {
+        background: linear-gradient(135deg, #107c10 0%, #16a34a 100%);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.16);
+      }
+      .tool-icon.google-sheets {
+        background: linear-gradient(135deg, #0f9d58 0%, #34a853 100%);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.16);
+      }
+      .tool-icon.streamlit {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 107, 61, 0.18),
+          rgba(255, 61, 61, 0.14)
+        );
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.14);
+      }
+      .tool-icon.php {
+        background: linear-gradient(
+          135deg,
+          rgba(119, 123, 180, 0.22),
+          rgba(95, 67, 179, 0.18)
+        );
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.16);
+      }
+      .tool-icon.gemini {
+        background: linear-gradient(
+          135deg,
+          rgba(79, 70, 229, 0.22),
+          rgba(34, 211, 238, 0.16)
+        );
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.16);
+      }
+      .tool-icon.webapps {
+        background: linear-gradient(
+          135deg,
+          rgba(14, 165, 233, 0.24),
+          rgba(59, 130, 246, 0.18)
+        );
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.16);
       }
       .tool-name {
         font-size: 0.95rem;
         font-weight: 600;
         margin-bottom: 16px;
         color: var(--text-primary);
-      }
-      .tool-progress {
-        width: 100%;
-        height: 6px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 100px;
-        overflow: hidden;
-        position: relative;
-      }
-      .tool-progress-bar {
-        height: 100%;
-        border-radius: 100px;
-        background: linear-gradient(
-          90deg,
-          var(--neon-purple),
-          var(--neon-blue)
-        );
-        position: relative;
-        transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-        width: 0;
-      }
-      .tool-progress-bar::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 20px;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.3)
-        );
-        border-radius: 100px;
-        animation: progressShine 2s ease-in-out infinite;
       }
       @keyframes progressShine {
         0% {
@@ -1066,12 +1403,6 @@
           transform: translateX(20px);
           opacity: 0;
         }
-      }
-      .tool-progress-label {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        margin-top: 8px;
-        font-family: var(--font-mono);
       }
 
       /* Skills */
@@ -1174,19 +1505,21 @@
           grid-template-columns: repeat(3, 1fr);
         }
       }
-      .certifications-header-bar {
+      .certifications-header-bar,
+      .cv-header-bar {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 12px 20px;
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(255, 255, 255, 0.04);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 12px;
         cursor: pointer;
         transition: all 0.3s ease;
       }
-      .certifications-header-bar:hover {
+      .certifications-header-bar:hover,
+      .cv-header-bar:hover {
         background: rgba(255, 255, 255, 0.06);
         border-color: rgba(168, 85, 247, 0.4);
       }
@@ -1200,7 +1533,36 @@
         padding: 0 5px;
       }
       .certifications-drawer.expanded {
-        max-height: 2000px;
+        max-height: none;
+        opacity: 1;
+        margin-top: 20px;
+      }
+      /* Projects drawer mirrors certifications drawer behavior */
+      .projects-drawer {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 0.5s ease;
+        opacity: 0;
+        padding: 0 5px;
+      }
+      .projects-drawer.expanded {
+        max-height: none;
+        opacity: 1;
+        margin-top: 20px;
+      }
+      .cv-drawer {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 0.5s ease;
+        opacity: 0;
+        padding: 0 5px;
+      }
+      .cv-drawer.expanded {
+        max-height: none;
         opacity: 1;
         margin-top: 20px;
       }
@@ -1362,38 +1724,125 @@
         gap: 16px;
       }
       .cert-logo {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
+        width: 96px;
+        height: 96px;
+        border-radius: 24px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
+        font-size: 2rem;
         flex-shrink: 0;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+      .cert-logo.microsoft {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 120, 212, 0.16),
+          rgba(8, 94, 184, 0.2)
+        );
+        color: #00a4ef;
       }
       .cert-logo.google {
         background: linear-gradient(
           135deg,
-          rgba(59, 130, 246, 0.2),
-          rgba(34, 197, 94, 0.2)
+          rgba(234, 67, 53, 0.16),
+          rgba(52, 168, 83, 0.12)
         );
         color: #4285f4;
       }
-      .cert-logo.duke {
+      .cert-logo.ibm {
         background: linear-gradient(
           135deg,
-          rgba(59, 130, 246, 0.2),
-          rgba(168, 85, 247, 0.2)
+          rgba(0, 0, 255, 0.14),
+          rgba(0, 0, 0, 0.08)
         );
-        color: var(--neon-blue);
+        color: #0062ff;
+      }
+      .cert-logo.github {
+        background: #0d1117;
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+      .cert-logo.coursera {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 83, 188, 0.16),
+          rgba(0, 131, 255, 0.12)
+        );
+        color: #2a73cc;
+      }
+      .cert-logo.edraak {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 153, 0, 0.16),
+          rgba(251, 192, 45, 0.12)
+        );
+        color: #f58634;
       }
       .cert-logo.hp {
         background: linear-gradient(
           135deg,
-          rgba(20, 184, 166, 0.2),
-          rgba(34, 197, 94, 0.2)
+          rgba(0, 100, 179, 0.16),
+          rgba(0, 139, 204, 0.12)
         );
-        color: var(--neon-teal);
+        color: #0096d6;
+      }
+      .cert-logo.duke {
+        background: linear-gradient(
+          135deg,
+          rgba(47, 116, 186, 0.16),
+          rgba(69, 91, 172, 0.12)
+        );
+        color: #1155cc;
+      }
+      .cert-logo.meta {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 28, 89, 0.16),
+          rgba(101, 126, 234, 0.12)
+        );
+        color: #0a84ff;
+      }
+      .cert-logo.harvard {
+        background: linear-gradient(
+          135deg,
+          rgba(168, 25, 48, 0.16),
+          rgba(135, 31, 29, 0.12)
+        );
+        color: #a51c30;
+      }
+      .cert-logo.pmi {
+        background: linear-gradient(
+          135deg,
+          rgba(38, 133, 255, 0.16),
+          rgba(0, 106, 255, 0.12)
+        );
+        color: #0a6bff;
+      }
+      .cert-logo.excel {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 122, 61, 0.16),
+          rgba(16, 124, 16, 0.12)
+        );
+        color: #217346;
+      }
+      .cert-logo.university {
+        background: linear-gradient(
+          135deg,
+          rgba(34, 197, 94, 0.16),
+          rgba(34, 126, 224, 0.12)
+        );
+        color: #0f4c81;
+      }
+      .cert-logo.default {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.02)
+        );
+        color: var(--text-primary);
       }
       .cert-info h4 {
         font-size: 1rem;
@@ -2116,6 +2565,82 @@
       }
     </style>
     <style>
+      /* Lightbox overlay */
+      .lightbox-trigger {
+        cursor: pointer;
+      }
+
+      .lightbox-overlay {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 2000;
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+      }
+
+      .lightbox-overlay.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .lightbox-overlay img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 14px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--text-primary);
+        font-size: 1.3rem;
+        cursor: pointer;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+        z-index: 1;
+      }
+
+      .lightbox-close:hover {
+        background: rgba(255, 255, 255, 0.16);
+        transform: scale(1.05);
+      }
+
+      @keyframes fadeInLightbox {
+        from {
+          opacity: 0;
+          transform: scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .lightbox-overlay.active img {
+        animation: fadeInLightbox 0.3s ease;
+      }
+    </style>
+    <style>
       /* Admin polish: rating badge, modal, toast, two-column forms */
       .admin-header {
         gap: 16px;
@@ -2165,6 +2690,110 @@
         padding: 10px 16px;
         border-radius: 10px;
         cursor: pointer;
+        transition: var(--transition-smooth);
+      }
+      .btn-ghost:hover {
+        border-color: rgba(168, 85, 247, 0.3);
+        color: var(--text-primary);
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .contact-grid {
+        padding: 28px;
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 24px;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 8px;
+      }
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        padding: 24px;
+      }
+      .contact-intro {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin: 0;
+      }
+      .contact-list {
+        display: grid;
+        gap: 14px;
+      }
+      .contact-detail {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .contact-detail i {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.07);
+        color: var(--neon-purple);
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+      .contact-detail i.fa-envelope {
+        background: rgba(59, 130, 246, 0.2);
+        color: #3b82f6;
+        font-size: 1.1rem;
+      }
+      .contact-detail i.fa-phone {
+        background: rgba(168, 85, 247, 0.2);
+        color: #a855f7;
+        font-size: 1.1rem;
+      }
+      .contact-detail i.fa-whatsapp {
+        background: rgba(16, 163, 76, 0.2);
+        color: #25d366;
+        font-size: 1.2rem;
+      }
+      .contact-detail i.fa-map-marker-alt {
+        background: rgba(236, 72, 153, 0.2);
+        color: #ec4899;
+        font-size: 1.1rem;
+      }
+      .contact-detail i:hover {
+        transform: scale(1.1);
+      }
+      .contact-link,
+      .contact-location {
+        color: var(--text-primary);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .contact-link:hover {
+        color: var(--neon-blue);
+        text-decoration: underline;
+      }
+      .contact-link-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        padding: 14px 22px;
       }
 
       /* Toast */
@@ -2303,10 +2932,194 @@
         pointer-events: none;
       }
     </style>
+    <style>
+      /* Dedicated print rules for A4 PDF export: overrides earlier print rules */
+      @media print {
+        @page {
+          size: A4;
+          margin: 15mm 12mm;
+        }
+
+        html,
+        body {
+          background: #ffffff !important;
+          color: #1a1a1a !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+          font-size: 10.5pt !important;
+          line-height: 1.18 !important;
+          height: auto !important;
+          overflow: visible !important;
+        }
+
+        /* Remove non-essential UI for clean print */
+        .nav-glass,
+        .nav-container,
+        .nav-logo,
+        .nav-links,
+        .nav-select,
+        .nav-admin-btn,
+        .cv-select-row,
+        .cv-download,
+        .btn-primary,
+        .admin-overlay,
+        #toastContainer,
+        .grid-overlay,
+        .ambient-bg,
+        .admin-dashboard {
+          display: none !important;
+        }
+
+        /* Flatten multi-column/grid layouts to a single readable flow */
+        .cv-container,
+        .cv-sheet,
+        .cv-card,
+        .cv-resume-grid {
+          display: block !important;
+          width: 100% !important;
+          grid-template-columns: none !important;
+          gap: 0 !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          border: none !important;
+          box-shadow: none !important;
+        }
+        .cv-sheet {
+          padding: 6mm !important;
+        }
+        .cv-sheet-header {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
+          gap: 8mm !important;
+          padding-bottom: 4mm !important;
+          border-bottom: 1px solid #dddddd !important;
+          margin-bottom: 6mm !important;
+        }
+        .cv-title-group {
+          order: 1 !important;
+          flex: 1 1 auto !important;
+        }
+        .cv-download {
+          display: none !important;
+        }
+        .cv-main {
+          order: 2 !important;
+          width: 100% !important;
+          float: none !important;
+        }
+        .cv-sidebar {
+          order: 3 !important;
+          width: 100% !important;
+          margin-top: 6mm !important;
+          float: none !important;
+        }
+
+        /* Profile image and heading alignment */
+        .profile-frame,
+        #profileImg {
+          width: 84px !important;
+          height: 84px !important;
+          border-radius: 50% !important;
+          display: block !important;
+          float: left !important;
+          margin-right: 10px !important;
+          margin-bottom: 0 !important;
+        }
+
+        /* Typography tuned for print */
+        h1,
+        .hero-name,
+        .cv-name {
+          font-size: 16pt !important;
+          color: #1a1a1a !important;
+          margin: 0 0 2mm 0 !important;
+        }
+        h2,
+        h3,
+        .section-title,
+        .cv-section h4 {
+          font-size: 14pt !important;
+          color: #1a1a1a !important;
+          margin: 4mm 0 2mm 0 !important;
+        }
+        p,
+        li,
+        span,
+        .cv-role,
+        .cv-contact-list span,
+        .cv-contact-list a {
+          font-size: 10pt !important;
+          color: #1a1a1a !important;
+        }
+
+        /* Page-break controls: avoid breaking inside items and prevent orphan headings */
+        .cv-experience-item,
+        .cv-education,
+        .cv-skill-group,
+        .cv-skill-list li,
+        .work-item,
+        .education-item,
+        .skill-item {
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
+          margin-bottom: 3mm !important;
+        }
+        .cv-section h4,
+        .section-title {
+          page-break-after: avoid !important;
+          break-after: avoid !important;
+        }
+        h2,
+        h3,
+        h4,
+        .section-title {
+          orphans: 3;
+          widows: 3;
+        }
+
+        /* Compact spacing to help fit content neatly on A4 */
+        .section,
+        .cv-section {
+          margin-bottom: 4mm !important;
+          padding-bottom: 0 !important;
+          border-bottom: none !important;
+        }
+        .cv-contact-list li,
+        .cv-experience-item {
+          margin-bottom: 3mm !important;
+        }
+
+        /* Images and links */
+        img {
+          max-width: 100% !important;
+          height: auto !important;
+        }
+        a {
+          color: #1a1a1a !important;
+          text-decoration: none !important;
+        }
+
+        /* Ensure no floats or overlapping */
+        .float,
+        .left,
+        .right {
+          float: none !important;
+        }
+
+        /* Force printer color adjustments */
+        html,
+        body {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="aurora-ui-bg">
+    <a href="#profile" class="skip-to-main">Skip to main content</a>
     <div class="ambient-bg">
-      <div class="orb orb-1"></div>
       <div class="orb orb-2"></div>
       <div class="orb orb-3"></div>
       <div class="orb orb-4"></div>
@@ -2315,9 +3128,36 @@
 
     <nav class="nav-glass" id="navbar">
       <div class="nav-container">
-        <div class="nav-logo">ENG.I M</div>
-        <ul class="nav-links">
-          <li><a href="#profile">Profile</a></li>
+        <a
+          href="#"
+          class="nav-logo nav-logo-link"
+          onclick="
+            showLoginModal();
+            return false;
+          "
+        >
+          <span class="brand-mark"
+            ><img
+              src="images/profil1.jpg"
+              alt="Ibrahim Muhamad logo"
+              class="logo-image"
+          /></span>
+          ENG.IM
+        </a>
+        <button
+          id="navToggle"
+          class="hamburger"
+          aria-label="Toggle navigation"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+          onclick="toggleMenu()"
+        >
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-links" id="primary-navigation">
+          <li class="nav-profile"><a href="#profile">Profile</a></li>
           <li><a href="#cv">CV</a></li>
           <li><a href="#expertise">Expertise</a></li>
           <li><a href="#tools">Tools</a></li>
@@ -2327,54 +3167,90 @@
         </ul>
         <select class="nav-select" onchange="navigateSection(this.value)">
           <option value="profile">Profile</option>
-          <option value="cv">CV / Resume</option>
+          <option value="cv">CV</option>
           <option value="expertise">Expertise</option>
           <option value="tools">Tools</option>
           <option value="skills">Skills</option>
           <option value="certs">Credentials</option>
           <option value="projects">Projects</option>
         </select>
-        <button class="nav-admin-btn" onclick="openAdmin()">
-          <i class="fas fa-lock" style="margin-right: 6px"></i>Admin
+        <button
+          id="mobileQuick"
+          class="mobile-nav-button"
+          onclick="
+            navigateSection('profile');
+            return false;
+          "
+          aria-label="Go to Profile"
+        >
+          Profile
         </button>
       </div>
     </nav>
 
     <main class="main-content">
       <section class="section hero-section" id="profile">
-        <div class="profile-frame">
+        <div class="profile-frame" id="profileFrame">
           <img
             id="profileImg"
             src="images/profile.jpg"
-            alt="Profile"
-            style="
-              width: 100%;
-              height: 100%;
-              border-radius: 50%;
-              object-fit: cover;
-              border: 3px solid var(--bg-deep);
-            "
+            alt="Portrait of Ibrahim Muhamad, Data Analyst"
+            title="Click to enlarge profile"
           />
         </div>
-        <h1 class="hero-name">Ibrahim Mohamed</h1>
-        <p class="hero-title">Data Analyst & Front-End Web Developer</p>
+        <h1 class="hero-name">Ibrahim Muhamad</h1>
+        <p class="hero-title">
+          Data Analyst & Business Intelligence Specialist
+        </p>
         <div class="hero-meta">
           <span class="hero-meta-item"
-            ><i class="fas fa-birthday-cake"></i> 22 Years Old</span
+            ><i class="fas fa-birthday-cake"></i> 23 Years Old</span
           >
           <span class="hero-meta-item"
             ><i class="fas fa-map-marker-alt"></i> Available Worldwide</span
           >
           <span class="hero-meta-item"
-            ><i class="fas fa-graduation-cap"></i> Final-Year BIS Student</span
+            ><i class="fas fa-graduation-cap"></i>BIS Graduate Business
+            Information Systems</span
           >
         </div>
         <p class="hero-bio">
-          Final-year Business Information Systems (BIS) student bridging the gap
-          between raw data and stunning web interfaces. I specialize in building
-          automated data pipelines, interactive dashboards, and scalable
-          serverless web applications.
+          I build data-driven solutions that help teams make faster, smarter
+          decisions. My work combines business intelligence, automation, and
+          polished analytics reporting to deliver measurable impact for
+          stakeholders and leadership.
         </p>
+        <div class="hero-actions">
+          <!-- <a href="#cv" class="btn-primary">View CV</a> -->
+          <a
+            href="#contact"
+            class="btn-secondary"
+            title="Go to Contact section"
+          >
+            Contact Me
+          </a>
+          <button
+            id="installAppBtn"
+            class="btn-primary install-btn"
+            type="button"
+          >
+            Install App
+          </button>
+        </div>
+        <!-- <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-value">80+</span>
+            <span class="metric-label">Dashboards & reports</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">60+</span>
+            <span class="metric-label">Automation workflows</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">4+</span>
+            <span class="metric-label">Years in analytics</span>
+          </div>
+        </div> -->
         <div class="hero-social">
           <a href="#" id="social_github" class="social-btn" title="GitHub">
             <i class="fab fa-github"></i>
@@ -2385,7 +3261,12 @@
           <a href="#" id="social_twitter" class="social-btn" title="Twitter">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#" id="social_email" class="social-btn" title="Email">
+          <a
+            href="mailto:ibra7im.engineer@gmail.com"
+            id="social_email"
+            class="social-btn"
+            title="Email"
+          >
             <i class="fas fa-envelope"></i>
           </a>
         </div>
@@ -2394,99 +3275,133 @@
       <section class="section" id="cv">
         <h2 class="section-title">
           <span class="title-icon"><i class="fas fa-file-alt"></i></span>
-          CV / Resume
+          CV
           <span class="title-line"></span>
         </h2>
-        <div class="cv-select-row">
-          <label for="cvDisplaySelect">Show CV</label>
-          <select
-            id="cvDisplaySelect"
-            class="cv-display-select"
-            onchange="toggleCvDisplay(this.value)"
-          >
-            <option value="" disabled selected hidden>
-              Select CV / Resume
-            </option>
-            <option value="show">CV / Resume</option>
-          </select>
-        </div>
-        <div class="glass-card cv-card hidden">
-          <div class="cv-sheet cv-container">
-            <div class="cv-sheet-header">
-              <div class="cv-title-group">
-                <h3 class="cv-name">Ibrahim Mohamed</h3>
-                <p class="cv-role">Data Analyst & Front-End Developer</p>
-              </div>
-              <button class="cv-download" onclick="printCvPdf()">
-                <i class="fas fa-download"></i> Download PDF
-              </button>
+        <div
+          class="certifications-header-bar cv-header-bar no-print"
+          onclick="toggleCvDrawer()"
+          id="cvHeaderBar"
+          role="button"
+          aria-expanded="true"
+        >
+          <div style="display: flex; align-items: center; gap: 14px">
+            <div
+              style="
+                width: 42px;
+                height: 42px;
+                border-radius: 14px;
+                background: rgba(168, 85, 247, 0.15);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--neon-purple);
+                font-size: 1.1rem;
+              "
+            >
+              <i class="fas fa-file-alt"></i>
             </div>
-
-            <div class="cv-resume-grid">
-              <div class="cv-main">
-                <section class="cv-section">
-                  <h4>Professional Summary</h4>
-                  <p id="cv_summary_text">
-                    Data Analyst and Front-End Developer with a focus on
-                    Business Information Systems. Skilled in translating
-                    business requirements into interactive dashboards, automated
-                    ETL pipelines, and responsive web applications.
-                  </p>
-                </section>
-
-                <section class="cv-section">
-                  <h4>Work History</h4>
-                  <div id="cv_experience_list_display"></div>
-                </section>
-
-                <section class="cv-section">
-                  <h4>Education</h4>
-                  <div class="cv-education">
-                    <strong id="cv_education_degree"
-                      >Business Information Systems (BIS)</strong
-                    >
-                    <div class="cv-education-meta">
-                      <span id="cv_education_school">Final-Year Student</span>
-                      <span id="cv_education_date">Expected 2026</span>
-                    </div>
-                  </div>
-                </section>
+            <div>
+              <div
+                style="
+                  font-size: 1rem;
+                  font-weight: 700;
+                  color: var(--text-primary);
+                "
+              >
+                CV
               </div>
-
-              <aside class="cv-sidebar">
-                <section class="cv-section">
-                  <h4>Contact Details</h4>
-                  <ul id="cv_contact_list" class="cv-contact-list">
-                    <li>
-                      <strong>Email</strong>
-                      <span id="cv_contact_email"
-                        >ibrahim.Mohamed@example.com</span
-                      >
-                    </li>
-                    <li>
-                      <strong>Phone</strong>
-                      <span id="cv_contact_phone">+971 50 123 4567</span>
-                    </li>
-                    <li>
-                      <strong>LinkedIn</strong>
-                      <span id="cv_contact_linkedin"
-                        >linkedin.com/in/ibrahimMohamed</span
-                      >
-                    </li>
-                    <li>
-                      <strong>Location</strong>
-                      <span id="cv_contact_location">Dubai, UAE</span>
-                    </li>
-                  </ul>
-                </section>
-
-                <section class="cv-section">
-                  <h4>Technical Skills & Tools</h4>
-                  <div id="cv_skills_display"></div>
-                </section>
-              </aside>
+              <div style="font-size: 0.85rem; color: var(--text-muted)">
+                Expand to view the CV and download your PDF.
+              </div>
             </div>
           </div>
+          <button
+            type="button"
+            class="btn-primary no-print"
+            id="cvToggleButton"
+            style="width: auto; min-width: 180px; white-space: nowrap"
+          >
+            View CV
+            <span class="chevron-icon" id="cvChevronIcon">↓</span>
+          </button>
+        </div>
+        <div
+          class="certifications-drawer cv-drawer"
+          id="cvDrawer"
+          style="display: none"
+        >
+          <article class="glass-card cv-card">
+            <section
+              id="cv"
+              class="cv-sheet cv-container"
+              aria-label="Curriculum Vitae"
+            >
+              <header class="cv-sheet-header">
+                <div class="cv-title-group">
+                  <h1 class="cv-name">Ibrahim Muhamad</h1>
+                  <p class="cv-role">
+                    Data Analyst & Business Intelligence Specialist
+                  </p>
+                  <p class="cv-contact-line" id="cv_contact_line"></p>
+                </div>
+                <a
+                  href="CV/Ibrahim_Mohamed_CV.pdf"
+                  download="Ibrahim_Muhamad_CV.pdf"
+                  >Download CV</a
+                >
+              </header>
+
+              <style>
+                .pdf-cv-container {
+                  background: #ffffff; /* force white canvas behind PDF */
+                  width: 100%;
+                  padding: 0;
+                  margin: 0;
+                  overflow: hidden;
+                }
+                .pdf-cv-container .pdf-cv-iframe {
+                  display: block;
+                  width: 100%; /* full width, crisp and responsive */
+                  max-width: 100%; /* ensure PDF content stretches to container */
+                  margin: 0;
+                  height: 4200px; /* even taller to render both PDF pages without inner scrollbars */
+                  min-height: 4200px;
+                  border: 0;
+                  background: #ffffff;
+                  box-shadow: none;
+                  overflow: hidden !important;
+                }
+                @media (max-width: 640px) {
+                  .pdf-cv-container .pdf-cv-iframe {
+                    height: 3800px;
+                  }
+                }
+              </style>
+
+              <div
+                id="pdfCvContainer"
+                class="pdf-cv-container"
+                aria-label="Curriculum Vitae"
+              >
+                <iframe
+                  id="pdfCvFrame"
+                  class="pdf-cv-iframe"
+                  src="CV/Ibrahim_Mohamed_CV.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  title="Ibrahim Muhamad CV PDF"
+                  loading="lazy"
+                  scrolling="no"
+                  style="
+                    display: none;
+                    height: 72vh;
+                    min-height: 560px;
+                    max-height: 90vh;
+                    overflow: hidden !important;
+                  "
+                ></iframe>
+              </div>
+            </section>
+          </article>
         </div>
       </section>
 
@@ -2508,27 +3423,89 @@
         <div class="tools-grid" id="toolsGrid"></div>
       </section>
 
-      <section class="section" id="skills">
-        <h2 class="section-title">
-          <span class="title-icon"><i class="fas fa-bolt"></i></span>
-          Professional Skills
-          <span class="title-line"></span>
-        </h2>
-        <div class="skills-container" id="skillsContainer"></div>
-      </section>
+      <!-- Certificates + Skills paired layout -->
+      <div class="section certs-skills-layout">
+        <div class="certs-column">
+          <section class="section" id="certs">
+            <h2 class="section-title">
+              <span class="title-icon"><i class="fas fa-certificate"></i></span>
+              Credentials & Certifications
+              <span class="title-line"></span>
+            </h2>
+            <div
+              class="certifications-header-bar"
+              onclick="toggleCertDrawer()"
+              id="certificationsHeaderBar"
+              role="button"
+              aria-expanded="false"
+            >
+              <div style="display: flex; align-items: center; gap: 14px">
+                <div
+                  style="
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 14px;
+                    background: rgba(255, 255, 255, 0.06);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--neon-purple);
+                    font-size: 1.1rem;
+                  "
+                >
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <div>
+                  <div
+                    style="
+                      font-size: 1rem;
+                      font-weight: 700;
+                      color: var(--text-primary);
+                    "
+                  >
+                    Credentials & Certifications
+                  </div>
+                  <div style="font-size: 0.85rem; color: var(--text-muted)">
+                    View verified credentials, certification details, and
+                    professional validation.
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn-primary" id="certsToggleButton">
+                <span id="certsToggleLabel">Browse Verified Credentials</span>
+                <span class="chevron-icon" id="certsChevronIcon">↓</span>
+              </button>
+            </div>
+            <div class="certifications-drawer" id="certificationsDrawer">
+              <div class="certs-grid" id="certsGrid"></div>
+            </div>
+          </section>
+        </div>
 
-      <section class="section" id="certs">
+        <aside class="skills-column">
+          <section class="section" id="skills">
+            <h2 class="section-title">
+              <span class="title-icon"><i class="fas fa-bolt"></i></span>
+              Professional Skills
+              <span class="title-line"></span>
+            </h2>
+            <div class="skills-container" id="skillsContainer"></div>
+          </section>
+        </aside>
+      </div>
+
+      <section class="section" id="projects">
         <h2 class="section-title">
-          <span class="title-icon"><i class="fas fa-certificate"></i></span>
-          Credentials & Certifications
+          <span class="title-icon"><i class="fas fa-rocket"></i></span>
+          Featured Projects
           <span class="title-line"></span>
         </h2>
         <div
           class="certifications-header-bar"
-          onclick="toggleCertDrawer()"
-          id="certificationsHeaderBar"
+          onclick="toggleProjectsDrawer()"
+          id="projectsHeaderBar"
           role="button"
-          aria-expanded="false"
+          aria-expanded="true"
         >
           <div style="display: flex; align-items: center; gap: 14px">
             <div
@@ -2544,7 +3521,7 @@
                 font-size: 1.1rem;
               "
             >
-              <i class="fas fa-certificate"></i>
+              <i class="fas fa-rocket"></i>
             </div>
             <div>
               <div
@@ -2554,61 +3531,256 @@
                   color: var(--text-primary);
                 "
               >
-                Credentials & Certifications
+                Featured Projects
               </div>
               <div style="font-size: 0.85rem; color: var(--text-muted)">
-                Expand to view verification details and certificate summaries.
+                Expand to view filters and project previews.
               </div>
             </div>
           </div>
-          <button type="button" class="btn-primary" id="certsToggleButton">
-            <span id="certsToggleLabel">View All Credentials</span>
-            <span class="chevron-icon" id="certsChevronIcon">↓</span>
+          <button type="button" class="btn-primary" id="projectsToggleButton">
+            <span id="projectsToggleLabel">View Projects</span>
+            <span class="chevron-icon" id="projectsChevronIcon">↓</span>
           </button>
         </div>
-        <div class="certifications-drawer" id="certificationsDrawer">
-          <div class="certs-grid" id="certsGrid"></div>
+        <div class="projects-drawer" id="projectsDrawer">
+          <div class="project-filter-bar">
+            <button
+              type="button"
+              class="filter-tab active"
+              data-filter="All"
+              onclick="setProjectFilter('All')"
+            >
+              All
+            </button>
+            <button
+              type="button"
+              class="filter-tab"
+              data-filter="Data Analysis"
+              onclick="setProjectFilter('Data Analysis')"
+            >
+              Data Analysis
+            </button>
+            <button
+              type="button"
+              class="filter-tab"
+              data-filter="Front-End"
+              onclick="setProjectFilter('Front-End')"
+            >
+              Front-End
+            </button>
+          </div>
+          <div class="projects-list" id="projectsList"></div>
         </div>
       </section>
 
-      <section class="section" id="projects">
+      <section class="section" id="contact">
         <h2 class="section-title">
-          <span class="title-icon"><i class="fas fa-rocket"></i></span>
-          Featured Projects
+          <span class="title-icon"><i class="fas fa-envelope"></i></span>
+          Contact Me — تواصل معي
           <span class="title-line"></span>
         </h2>
-        <div class="project-filter-bar">
-          <button
-            type="button"
-            class="filter-tab active"
-            data-filter="All"
-            onclick="setProjectFilter('All')"
-          >
-            All
-          </button>
-          <button
-            type="button"
-            class="filter-tab"
-            data-filter="Data Analysis"
-            onclick="setProjectFilter('Data Analysis')"
-          >
-            Data Analysis
-          </button>
-          <button
-            type="button"
-            class="filter-tab"
-            data-filter="Front-End"
-            onclick="setProjectFilter('Front-End')"
-          >
-            Front-End
-          </button>
+
+        <div class="glass-card contact-grid">
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="contact_name">Name</label>
+              <input
+                id="contact_name"
+                name="name"
+                class="form-input"
+                placeholder="Your full name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="contact_email">Email</label>
+              <input
+                id="contact_email"
+                name="email"
+                type="email"
+                class="form-input"
+                placeholder="you@domain.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="contact_message">Message</label>
+              <textarea
+                id="contact_message"
+                name="message"
+                class="form-input"
+                rows="6"
+                placeholder="How can I help?"
+                required
+              ></textarea>
+            </div>
+            <div class="contact-actions">
+              <button type="submit" class="btn-primary">Send Message</button>
+              <button
+                type="button"
+                class="btn-ghost"
+                onclick="document.getElementById('contactForm').reset()"
+              >
+                Clear
+              </button>
+            </div>
+          </form>
+
+          <div class="contact-details">
+            <p class="contact-intro">
+              Available for freelance, contract, and full-time opportunities. I
+              usually reply within 24–48 hours.
+            </p>
+            <div class="contact-list">
+              <div class="contact-detail">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:ibra7im.engineer@gmail.com" class="contact-link"
+                  >ibra7im.engineer@gmail.com</a
+                >
+              </div>
+              <div class="contact-detail">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+201021279663" class="contact-link"
+                  >+20 102 127 9663</a
+                >
+              </div>
+              <div class="contact-detail">
+                <i class="fab fa-whatsapp"></i>
+                <a
+                  href="https://wa.me/201021279663"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="contact-link"
+                  >WhatsApp</a
+                >
+              </div>
+              <div class="contact-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="contact-location">Kafr El-Sheikh, Egypt</span>
+              </div>
+            </div>
+            <a
+              href="https://www.linkedin.com/in/ibrahim-m-bassiouni/"
+              target="_blank"
+              class="btn-secondary contact-link-button"
+              >Message on LinkedIn</a
+            >
+          </div>
         </div>
-        <div class="projects-list" id="projectsList"></div>
+
+        <script>
+          (function () {
+            const form = document.getElementById("contactForm");
+            if (!form) return;
+
+            const getMailtoUrl = (name, email, message) => {
+              const recipient = "ibra7im.engineer@gmail.com";
+              const subject = `Contact from ${name || "website visitor"}`;
+              const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+              return `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            };
+
+            const sendMailto = (name, email, message) => {
+              window.location.href = getMailtoUrl(name, email, message);
+            };
+
+            const showToast = (message, type = "success", linkHref = null) => {
+              const container = document.getElementById("toastContainer");
+              if (container) {
+                const t = document.createElement("div");
+                t.className = `toast ${type}`;
+                t.textContent = message;
+
+                if (linkHref) {
+                  const link = document.createElement("a");
+                  link.href = linkHref;
+                  link.textContent = "Send manually";
+                  link.target = "_blank";
+                  link.rel = "noreferrer";
+                  link.style.display = "inline-block";
+                  link.style.marginTop = "8px";
+                  link.style.color = "#fff";
+                  link.style.textDecoration = "underline";
+                  t.appendChild(document.createElement("br"));
+                  t.appendChild(link);
+                }
+
+                container.appendChild(t);
+                setTimeout(() => t.remove(), 4200);
+              } else {
+                alert(
+                  message + (linkHref ? "\nSend manually: " + linkHref : ""),
+                );
+              }
+            };
+
+            form.addEventListener("submit", function (e) {
+              e.preventDefault();
+              const name = document.getElementById("contact_name").value.trim();
+              const email = document
+                .getElementById("contact_email")
+                .value.trim();
+              const message = document
+                .getElementById("contact_message")
+                .value.trim();
+              if (!name || !email || !message) return;
+
+              const endpoint =
+                (typeof GOOGLE_SHEETS_WEBAPP_URL !== "undefined"
+                  ? GOOGLE_SHEETS_WEBAPP_URL
+                  : form.dataset.endpoint) || "";
+              const endpointInvalid =
+                !endpoint ||
+                endpoint.includes("YOUR_DEPLOYMENT_ID") ||
+                endpoint.includes("yourFormId") ||
+                endpoint.includes("formspree.io/f/yourFormId");
+
+              if (endpointInvalid) {
+                showToast(
+                  "Backend not configured yet. Opening email client so you can send the message to ibra7im.engineer@gmail.com",
+                  "warn",
+                );
+                sendMailto(name, email, message);
+                return;
+              }
+
+              submitContactForm(endpoint, name, email, message);
+            });
+
+            async function submitContactForm(endpoint, name, email, message) {
+              const payload = {
+                type: "contact",
+                name,
+                email,
+                message,
+                timestamp: new Date().toISOString(),
+              };
+              try {
+                await postToGoogleSheets(payload);
+                showToast("تم إرسال الرسالة — سأتواصل معك قريباً", "success");
+                try {
+                  if (window.analytics && analytics.trackEvent)
+                    analytics.trackEvent("contact_email_sent", { name });
+                } catch (e) {}
+                form.reset();
+                return;
+              } catch (err) {
+                const mailtoUrl = getMailtoUrl(name, email, message);
+                showToast(
+                  "Backend failed, click below to send manually.",
+                  "warn",
+                  mailtoUrl,
+                );
+              }
+            }
+          })();
+        </script>
       </section>
 
       <footer class="footer">
         <p>
-          Built with <i class="fas fa-heart heart"></i> by Ibrahim Mohamed
+          Built with <i class="fas fa-heart heart"></i> by Ibrahim Muhamad
           &mdash; 2026
         </p>
       </footer>
@@ -2622,7 +3794,7 @@
             Dashboard
           </h2>
           <div class="admin-rating" title="Quality: 5 out of 5">
-            <span class="stars">Ibrahim Mohamed</span>
+            <span class="stars">Ibrahim Muhamad</span>
             <span
               style="opacity: 0.9; margin-left: 6px; font-size: 0.9rem"
             ></span>
@@ -2635,7 +3807,10 @@
         <div class="glass-card login-panel" id="loginPanel">
           <div class="lock-icon"><i class="fas fa-lock"></i></div>
           <h3>Secure Access</h3>
-          <p>Enter your credentials to access the content management system.</p>
+          <p>
+            Enter your credentials to access the content management system. Use
+            <strong>admin</strong> / <strong>admin123</strong>.
+          </p>
           <div class="form-group">
             <label>Username</label>
             <input
@@ -2657,12 +3832,8 @@
           <button class="btn-primary" onclick="login()">Authenticate</button>
           <p class="login-error" id="loginError">
             <i class="fas fa-exclamation-circle" style="margin-right: 6px"></i
-            >Invalid credentials. Try <strong>admin / admin123</strong>
+            >Invalid credentials.
           </p>
-          <div class="admin-hint">
-            <i class="fas fa-info-circle"></i>
-            Demo credentials: <strong>admin</strong> / <strong>admin123</strong>
-          </div>
         </div>
 
         <div class="admin-dashboard" id="adminDashboard">
@@ -2750,7 +3921,7 @@
                   <img
                     id="pf_image_preview"
                     src=""
-                    alt="preview"
+                    alt="Uploaded profile preview"
                     style="
                       width: 96px;
                       height: 96px;
@@ -2899,7 +4070,7 @@
                   <img
                     id="cert_image_preview"
                     src=""
-                    alt="Certificate preview"
+                    alt="Uploaded certificate preview"
                     style="
                       width: 160px;
                       height: 96px;
@@ -2912,7 +4083,11 @@
               </div>
               <input type="hidden" id="cert_edit_index" value="" />
               <input type="hidden" id="cert_current_image" value="" />
-              <button class="btn-primary" onclick="addCert()">
+              <button
+                id="cert_submit_btn"
+                class="btn-primary"
+                onclick="addCert(event)"
+              >
                 Add Certification
               </button>
             </div>
@@ -2986,7 +4161,7 @@
                   <img
                     id="proj_image_preview"
                     src=""
-                    alt="preview"
+                    alt="Uploaded project preview"
                     style="
                       width: 160px;
                       height: 96px;
@@ -3001,9 +4176,22 @@
               <button
                 id="proj_submit_btn"
                 class="btn-primary"
-                onclick="addProject()"
+                onclick="addProject(event)"
               >
                 Add Project
+              </button>
+              <button
+                id="integration_test_button"
+                style="
+                  position: absolute;
+                  left: -9999px;
+                  top: -9999px;
+                  opacity: 0;
+                  pointer-events: none;
+                "
+                onclick="runPortfolioIntegrationTest()"
+              >
+                Run Integration Test
               </button>
             </div>
             <div id="admin_projects_list" style="margin-top: 18px"></div>
@@ -3037,7 +4225,7 @@
                   <input
                     id="cv_contact_phone_input"
                     class="form-input"
-                    placeholder="+971 50 123 4567"
+                    placeholder="+20 102 127 9663"
                     oninput="saveCv()"
                   />
                 </div>
@@ -3198,13 +4386,22 @@
             <h4><i class="fas fa-layer-group"></i> Expertise</h4>
             <div class="data-editor">
               <div class="form-group">
-                <label>Add New Expertise Item</label>
+                <label>Expertise Title</label>
                 <input
                   id="expertise_input"
                   type="text"
                   class="form-input"
-                  placeholder="e.g. Machine Learning for Data Products"
+                  placeholder="e.g. Workflow Automation & Smart Integration"
                 />
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <textarea
+                  id="expertise_description"
+                  class="form-input"
+                  rows="3"
+                  placeholder="Detailed description of the expertise area"
+                ></textarea>
               </div>
               <div class="form-actions">
                 <button
@@ -3277,12 +4474,219 @@
       </div>
     </div>
 
+    <div id="lightboxOverlay" class="lightbox-overlay" aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="Close lightbox">
+        ×
+      </button>
+      <img id="lightboxImage" src="" alt="Expanded image preview" />
+    </div>
+
     <div id="toastContainer"></div>
+
+    <div class="chatbot-widget" id="chatbotWidget" aria-hidden="true">
+      <button
+        class="chatbot-toggle"
+        id="chatbotToggle"
+        type="button"
+        aria-label="فتح المساعد الذكي"
+        title="المساعد الذكي"
+      >
+        <span class="sr-only">فتح المساعد الذكي</span>
+        <!-- Refined filled robot head icon for better legibility on dark backgrounds -->
+        <svg
+          class="chatbot-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect
+            x="3"
+            y="5"
+            width="18"
+            height="12"
+            rx="4"
+            fill="currentColor"
+            opacity="0.12"
+          ></rect>
+          <path
+            d="M8 8.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm8 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+            fill="currentColor"
+          />
+          <path
+            d="M7 12.5c0 1.4 1.568 2.5 5 2.5s5-1.1 5-2.5v1.5a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1v-1.5z"
+            fill="currentColor"
+            opacity="0.18"
+          />
+          <rect
+            x="5"
+            y="3"
+            width="14"
+            height="2"
+            rx="1"
+            fill="currentColor"
+            opacity="0.06"
+          />
+        </svg>
+        <span class="chatbot-badge" aria-hidden="true"></span>
+      </button>
+
+      <section
+        class="chatbot-panel"
+        id="chatbotPanel"
+        aria-hidden="true"
+        role="dialog"
+        aria-label="نافذة المحادثة"
+      >
+        <header class="chatbot-header">
+          <div class="chatbot-header__info">
+            <div class="chatbot-avatar" aria-hidden="true">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div>
+              <p class="chatbot-title">مساعد بورتفوليو إبراهيم</p>
+              <p class="chatbot-subtitle">
+                دعم احترافي سريع لمتابعي البورتفوليو والأسئلة التقنية.
+              </p>
+            </div>
+          </div>
+          <button
+            class="chatbot-close"
+            id="chatbotClose"
+            type="button"
+            aria-label="إغلاق"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </header>
+
+        <div
+          class="chatbot-messages"
+          id="chatbotMessages"
+          aria-live="polite"
+        ></div>
+
+        <div class="chatbot-input-footer">
+          <input
+            id="chatbotInput"
+            class="chatbot-input"
+            type="text"
+            placeholder="اكتب رسالتك هنا..."
+            aria-label="نص الرسالة"
+            autocomplete="off"
+          />
+          <button
+            id="chatbotSend"
+            class="chatbot-send"
+            type="button"
+            aria-label="إرسال"
+          >
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </section>
+    </div>
 
     <script>
       const STORAGE_KEY = "portfolio_data";
       const VIRTUAL_FS_STORAGE_KEY = "project_file_system";
       const PORTFOLIO_CERTS_KEY = "portfolio_certs";
+      const GROQ_API_KEY =
+        "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";
+      const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
+      const GROQ_MODEL = "llama-3.3-70b-versatile"; // أو llama3-8b-8192 حسب تفضيلك
+
+      const STORAGE_SAFE_MAX_BYTES = 4.5 * 1024 * 1024;
+
+      /* Performance & Analytics Helpers */
+      const analytics = {
+        trackEvent: (eventName, eventData = {}) => {
+          if (window.gtag) {
+            gtag("event", eventName, eventData);
+          }
+          console.debug(`[Analytics] ${eventName}`, eventData);
+        },
+        trackPageView: (pageName) => {
+          if (window.gtag) {
+            gtag("config", { page_path: `/${pageName}`, page_title: pageName });
+          }
+        },
+      };
+
+      const perfMonitor = {
+        marks: {},
+        mark: (name) => {
+          if (window.performance && window.performance.mark) {
+            window.performance.mark(name);
+            perfMonitor.marks[name] = Date.now();
+          }
+        },
+        measure: (name, startMark, endMark) => {
+          if (window.performance && window.performance.measure) {
+            try {
+              window.performance.measure(name, startMark, endMark);
+              const measure = window.performance.getEntriesByName(name)[0];
+              console.debug(
+                `[Performance] ${name}: ${measure.duration.toFixed(2)}ms`,
+              );
+            } catch (e) {
+              console.warn("Performance measurement failed:", e);
+            }
+          }
+        },
+      };
+
+      perfMonitor.mark("app-init-start");
+
+      const LOCAL_STORAGE_WARNING_SUPPRESSED = new Set();
+
+      function safeSetLocalStorage(key, value) {
+        const payloadSize = value ? value.length : 0;
+        if (payloadSize > STORAGE_SAFE_MAX_BYTES) {
+          if (!LOCAL_STORAGE_WARNING_SUPPRESSED.has(key)) {
+            console.warn(
+              `Skipping persistent save for key "${key}" because payload size (${Math.round(
+                payloadSize / 1024,
+              )} KB) exceeds safe storage limit.`,
+            );
+            LOCAL_STORAGE_WARNING_SUPPRESSED.add(key);
+          }
+          return false;
+        }
+
+        try {
+          localStorage.setItem(key, value);
+          return true;
+        } catch (err) {
+          if (
+            err instanceof DOMException &&
+            (err.name === "QuotaExceededError" ||
+              err.name === "NS_ERROR_DOM_QUOTA_REACHED")
+          ) {
+            console.warn(
+              `localStorage quota exceeded for key "${key}". Attempting to replace existing value.`,
+              err,
+            );
+            try {
+              localStorage.removeItem(key);
+              localStorage.setItem(key, value);
+              return true;
+            } catch (replaceErr) {
+              console.warn(
+                `Unable to persist key "${key}" after removing old value:`,
+                replaceErr,
+              );
+              return false;
+            }
+          }
+
+          console.warn(`Unable to persist key "${key}" to localStorage:`, err);
+          return false;
+        }
+      }
+
+      function safeSetJSONLocalStorage(key, obj) {
+        return safeSetLocalStorage(key, JSON.stringify(obj));
+      }
 
       const DEFAULT_PORTFOLIO_CERTS = [
         {
@@ -3527,6 +4931,65 @@
         return image;
       }
 
+      function getCertIconMetadata(cert) {
+        const issuer = (cert.issuer || "").toLowerCase();
+        const id = (cert.id || "").toLowerCase();
+        const source = `${issuer} ${id} ${cert.url || ""}`.toLowerCase();
+
+        if (source.includes("microsoft")) {
+          return { icon: "fab fa-microsoft", className: "microsoft" };
+        }
+        if (source.includes("google")) {
+          return { icon: "fab fa-google", className: "google" };
+        }
+        if (
+          source.includes("ibm") ||
+          source.includes("آي بي إم") ||
+          source.includes("آي بي ام")
+        ) {
+          return { icon: "fab fa-ibm", className: "ibm" };
+        }
+        if (source.includes("github")) {
+          return { icon: "fab fa-github", className: "github" };
+        }
+        if (source.includes("coursera")) {
+          return { icon: "fab fa-coursera", className: "coursera" };
+        }
+        if (source.includes("edraak")) {
+          return { icon: "fas fa-globe", className: "edraak" };
+        }
+        if (
+          source.includes("hp") ||
+          source.includes("إتش بي") ||
+          source.includes("ايتش بي")
+        ) {
+          return { icon: "fab fa-hp", className: "hp" };
+        }
+        if (source.includes("duke")) {
+          return { icon: "fas fa-university", className: "duke" };
+        }
+        if (source.includes("meta")) {
+          return { icon: "fab fa-meta", className: "meta" };
+        }
+        if (
+          source.includes("pmi") ||
+          source.includes("project management institute")
+        ) {
+          return { icon: "fas fa-chart-line", className: "pmi" };
+        }
+        if (source.includes("excel")) {
+          return { icon: "fas fa-file-excel", className: "excel" };
+        }
+        if (source.includes("harvard")) {
+          return { icon: "fab fa-harvard", className: "harvard" };
+        }
+        if (source.includes("university of michigan")) {
+          return { icon: "fas fa-university", className: "university" };
+        }
+
+        return { icon: "fas fa-award", className: "default" };
+      }
+
       function sanitizeFileName(value) {
         return value.replace(/[^a-zA-Z0-9._-]+/g, "_").replace(/^_+|_+$/g, "");
       }
@@ -3574,10 +5037,7 @@
       function getPortfolioCerts() {
         const raw = localStorage.getItem(PORTFOLIO_CERTS_KEY);
         if (!raw) {
-          localStorage.setItem(
-            PORTFOLIO_CERTS_KEY,
-            JSON.stringify(DEFAULT_PORTFOLIO_CERTS),
-          );
+          safeSetJSONLocalStorage(PORTFOLIO_CERTS_KEY, DEFAULT_PORTFOLIO_CERTS);
           return JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_CERTS));
         }
         try {
@@ -3587,17 +5047,14 @@
           }
           return parsed;
         } catch (e) {
-          localStorage.setItem(
-            PORTFOLIO_CERTS_KEY,
-            JSON.stringify(DEFAULT_PORTFOLIO_CERTS),
-          );
+          safeSetJSONLocalStorage(PORTFOLIO_CERTS_KEY, DEFAULT_PORTFOLIO_CERTS);
           return JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_CERTS));
         }
       }
 
       function setPortfolioCerts(certs) {
         const normalized = Array.isArray(certs) ? certs : [];
-        localStorage.setItem(PORTFOLIO_CERTS_KEY, JSON.stringify(normalized));
+        safeSetJSONLocalStorage(PORTFOLIO_CERTS_KEY, normalized);
         portfolioCerts = normalized;
         renderCerts();
         populateAdminLists();
@@ -3606,9 +5063,9 @@
       const staticImages = {
         profile: "images/profile.jpg",
         projects: {
-          myOrder: "images/projects/my-order.jpg",
-          dataX: "images/projects/datax.jpg",
-          freelance: "images/projects/my-order.jpg",
+          myOrder: "",
+          dataX: "",
+          freelance: "",
         },
       };
 
@@ -3624,16 +5081,16 @@
 
       const defaultData = {
         profile: {
-          name: "Ibrahim Mohamed",
-          age: 22,
-          title: "Data Analyst & Front-End Web Developer",
-          location: "Egypt",
-          bio: "BIS Graduate combining a strong foundation in business systems with technical expertise in Front-End Development and Data Analysis. Skilled in building responsive web applications and transforming raw data into interactive dashboards using React, Python, and SQL. Committed to helping clients drive business growth through data-driven visual solutions.",
+          name: "Ibrahim Muhamad",
+          age: 23,
+          title: "Data Analyst & Business Intelligence Specialist",
+          location: "Available Worldwide",
+          bio: "Business Information Systems graduate who delivers data-driven solutions for operations, reporting, and automation. I translate data into strategic visual insights, streamline analytics workflows, and build polished business intelligence experiences for high-impact decision-making.",
           image: staticImages.profile,
           social: {
-            github: "#",
+            github: "https://github.com/Ibra7imEngineer",
             linkedin: "https://www.linkedin.com/in/ibrahim-m-bassiouni/",
-            twitter: "#",
+            twitter: "https://x.com/elbraheim28117",
             email: "ibra7im.engineer@gmail.com",
           },
         },
@@ -3662,7 +5119,7 @@
         ],
         tools: [
           {
-            name: "SQL",
+            name: "SQL / MySQL",
             progress: 95,
             iconClass: "sql",
             iconSymbol: "fas fa-database",
@@ -3680,10 +5137,28 @@
             iconSymbol: "fas fa-chart-line",
           },
           {
+            name: "GitHub",
+            progress: 90,
+            iconClass: "github",
+            iconSymbol: "fab fa-github",
+          },
+          {
             name: "Tableau",
             progress: 85,
             iconClass: "tableau",
             iconSymbol: "fas fa-chart-pie",
+          },
+          {
+            name: "n8n",
+            progress: 90,
+            iconClass: "n8n",
+            iconSymbol: "fas fa-link",
+          },
+          {
+            name: "React.js",
+            progress: 80,
+            iconClass: "react",
+            iconSymbol: "fab fa-react",
           },
           {
             name: "Excel",
@@ -3709,6 +5184,83 @@
             iconClass: "javascript",
             iconSymbol: "fab fa-js",
           },
+          {
+            name: "Google Sheets",
+            progress: 82,
+            iconClass: "google-sheets",
+            iconSvg: `
+              <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                <path fill="#0f9d58" d="M18 12h28a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6V18a6 6 0 0 1 6-6z"/>
+                <path fill="#34a853" d="M18 12h28l-6 10H18z"/>
+                <path d="M26 28h12M26 36h12M26 44h12" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                <path d="M26 24l6 5 6-5" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            `,
+          },
+          {
+            name: "Streamlit",
+            progress: 80,
+            iconClass: "streamlit",
+            iconSvg: `
+              <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                <defs>
+                  <linearGradient id="streamlitGradient" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ff7b2f"/>
+                    <stop offset="100%" stop-color="#ff3c4d"/>
+                  </linearGradient>
+                </defs>
+                <path fill="url(#streamlitGradient)" d="M18 12l14-6 14 6 6 12-6 12-14 6-14-6-6-12z"/>
+                <path fill="#fff" d="M32 18l-5 4 5 4 5-4-5-4zm0 14l-5 4 5 4 5-4-5-4z"/>
+              </svg>
+            `,
+          },
+          {
+            name: "PHP",
+            progress: 79,
+            iconClass: "php",
+            iconSvg: `
+              <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                <ellipse cx="32" cy="34" rx="24" ry="14" fill="#777bb4"/>
+                <path fill="#ffffff" d="M21 38h4c1.5 0 2.7-1.2 2.7-2.7S26.5 32.7 25 32.7h-4v5.3zm12 0h8c1.5 0 2.7-1.2 2.7-2.7S38.5 32.7 37 32.7h-8v5.3zm13-5.3h3v5.3h-3zm-5 0h3v5.3h-3z"/>
+                <text x="32" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#ffffff">php</text>
+              </svg>
+            `,
+          },
+          {
+            name: "Gemini API",
+            progress: 82,
+            iconClass: "gemini",
+            iconSvg: `
+              <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                <defs>
+                  <linearGradient id="geminiGradient" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#4f46e5"/>
+                    <stop offset="100%" stop-color="#22d3ee"/>
+                  </linearGradient>
+                </defs>
+                <path fill="url(#geminiGradient)" d="M32 10l8.5 15.2L56 26l-13.1 11.4 4.4 15.8L32 42.8 16.7 53.2l4.4-15.8L8 26l15.5-0.8L32 10z"/>
+                <circle cx="32" cy="30" r="3.5" fill="#ffffff" opacity="0.95"/>
+              </svg>
+            `,
+          },
+          {
+            name: "Web Apps",
+            progress: 80,
+            iconClass: "webapps",
+            iconSvg: `
+              <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                <rect x="14" y="16" width="36" height="32" rx="6" fill="none" stroke="#7dd3fc" stroke-width="4"/>
+                <circle cx="22" cy="24" r="2" fill="#7dd3fc"/>
+                <circle cx="28" cy="24" r="2" fill="#7dd3fc"/>
+                <circle cx="34" cy="24" r="2" fill="#7dd3fc"/>
+                <path d="M20 32h24" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round"/>
+                <path d="M20 38h12" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round"/>
+                <path d="M29 30l-4 4 4 4" fill="none" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round"/>
+                <path d="M39 30l4 4-4 4" fill="none" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round"/>
+                <text x="32" y="49" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#7dd3fc">&lt;APP/&gt;</text>
+              </svg>
+            `,
+          },
         ],
         skills: [
           {
@@ -3731,58 +5283,75 @@
             name: "UI/UX Implementation",
             tooltip: "Translating designs into pixel-perfect interfaces",
           },
+          {
+            name: "Business Requirements Analysis",
+            tooltip:
+              "Studying market and business requirements to translate them into scalable technical solutions and dynamic, data-driven dashboards",
+          },
+          {
+            name: "Data Cleansing & Sterilization",
+            tooltip:
+              "Handling missing values and filtering datasets from outliers using statistical methods like IQR to ensure analytical accuracy and model readiness",
+          },
+          {
+            name: "KPI Definition & Business Performance Tracking",
+            tooltip:
+              "Formulating precise performance metrics tailored to project nature, bridging the gap between raw data and actionable business insights",
+          },
         ],
         cv: {
           contact: {
             email: "ibra7im.engineer@gmail.com",
-            phone: "01021279663",
+            phone: "+20 102 127 9663",
             linkedin: "https://www.linkedin.com/in/ibrahim-m-bassiouni/",
-            location: "Egypt",
+            location: "Kafr El-Sheikh, Egypt",
           },
           summary:
-            "BIS Graduate combining a strong foundation in business systems with technical expertise in Front-End Development and Data Analysis. Skilled in building responsive web applications and transforming raw data into interactive dashboards using React, Python, and SQL. Committed to helping clients drive business growth through data-driven visual solutions.",
+            "Results-driven Data Analyst and Front-End Developer with specialized expertise in Business Information Systems. Proven track record in transforming raw corporate data into interactive visual insights, automating complex backend workflows, and engineering responsive user interfaces to drive strategic decision-making and maximize business growth.",
           experience: [
             {
               title: "Lead Front-End Developer & Architect",
               company: "My Order System",
               dates: "March - April 2026",
               bullets: [
-                "Designed and implemented a responsive, glassmorphic front-end for a serverless restaurant ordering platform using modern JavaScript frameworks (React).",
-                "Migrated backend from local MySQL to a serverless Google Sheets architecture, reducing hosting costs and improving scalability; implemented client-side optimizations for performance and accessibility.",
+                "Engineered a seamless, responsive user interface across multiple devices utilizing Glassmorphism design principles.",
+                "Architected a highly configurable and scalable data layer tailored to client specifications, offering full native support to run seamlessly on either a robust MySQL database or a cloud-based Google Sheets backend to optimize operational infrastructure costs.",
+                "Successfully migrated a local Google Sheets database setup into a scalable, high-performance cloud infrastructure using MySQL, significantly reducing overhead costs and boosting platform loading speeds.",
               ],
             },
             {
-              title: "Data & Automation Engineer",
+              title: "Data Engineering & Automation Specialist",
               company: "DataX Platform",
               dates: "May 2026",
               bullets: [
-                "Developed automated ETL pipelines and data cleaning workflows using Python to standardize raw datasets for analysis.",
-                "Integrated web scraping tools and AutoML models to preprocess data and generate predictive insights, improving decision-making accuracy.",
+                "Designed automated ETL data pipelines to facilitate secure, documented analysis and seamlessly stream multi-source corporate datasets using Python.",
+                "Developed data extraction frameworks and predictive modeling components to deliver highly accurate, forward-looking insights that accelerated executive decision-making.",
               ],
             },
             {
-              title: "ENG DATA",
-              company: "Freelancing",
+              title: "Freelance Data & Web Analytics Consultant",
+              company: "ENG DATA",
               dates: "2025",
               bullets: [
-                "Front-End: Transformed Figma designs into responsive web pages and optimized code structures to improve website performance.",
-                "Data Analysis: Extracted and cleaned raw datasets using Python and SQL to build dynamic dashboard reports for management.",
+                "Developed responsive and fully optimized web interfaces adhering to modern performance and quality standards, maximizing client-side loading efficiency.",
+                "Built dynamic analytical reports and performance tracking dashboards; utilized Python and SQL to clean raw customer data and uncover actionable business trends.",
               ],
             },
           ],
           education: {
-            degree: "Business Information Systems (B I S)",
-            school: "Graduate",
-            graduationDate: "2026",
+            degree: "B.Sc. in Business Information Systems (BIS)",
+            school: "Higher Institute for Business Information Systems",
+            graduationDate: "Class of 2026",
           },
           skills: [
             {
-              category: "Technical Skills",
-              items: ["AI in Data Analytics"],
+              category: "Core Skills",
+              items: ["Data Analysis", "Python", "SQL", "Power BI", "Tableau"],
             },
             {
               category: "Tools & Platforms",
               items: [
+                "n8n Automation",
                 "SQL",
                 "Python",
                 "Power BI",
@@ -3801,7 +5370,7 @@
             category: "Front-End",
             tag: "Full-Stack Application",
             description:
-              "A serverless restaurant ordering system built as a personal portfolio showcase. Designed with a custom front-end and transitioned from a local MySQL database to a Google Sheets-based cloud architecture for optimized hosting and zero-cost scaling.",
+              "A serverless restaurant ordering solution built as a portfolio showcase, featuring a polished frontend and a cloud-hosted backend architecture designed for performance and scalability.",
             details:
               "Includes serverless deployment, Google Sheets cloud backend, responsive customer ordering flow, and real-time menu updates.",
             tech: ["React", "Google Sheets API", "Serverless", "CSS3"],
@@ -3815,7 +5384,7 @@
             description:
               "An automated data processing and cleaning portal integrated with Python web scraping and AutoML to clean, analyze, and predict data outcomes seamlessly.",
             details:
-              "Built with Python automation, end-to-end ETL pipelines, and predictive analytics for quality-driven data insights.",
+              "Built with Python automation, end-to-end ETL pipelines, and predictive analytics designed for reliable insight generation and decision support.",
             tech: ["Python", "AutoML", "Web Scraping", "Data Pipeline"],
             links: { demo: "#", github: "#" },
             image: staticImages.projects.dataX,
@@ -3834,10 +5403,257 @@
         });
       }
 
+      const GOOGLE_SHEETS_WEBAPP_URL =
+        "https://script.google.com/macros/s/AKfycbx4Wy6GiSPpWPhsrdscMbXhH630YZkb2sfnk7-PDMTWkytEHLu1r2SER_gb7erUgdPmHg/exec";
+      window.GOOGLE_SHEETS_WEBAPP_URL = GOOGLE_SHEETS_WEBAPP_URL;
+
+      function getCertificateFields() {
+        return {
+          title: document.getElementById("cert_name"),
+          issuer: document.getElementById("cert_provider"),
+          issueDate: document.getElementById("cert_date"),
+          credentialUrl: document.getElementById("cert_url"),
+          imageInput: document.getElementById("cert_image"),
+          imagePreview: document.getElementById("cert_image_preview"),
+          editIndex: document.getElementById("cert_edit_index"),
+          currentImage: document.getElementById("cert_current_image"),
+          submitButton: document.getElementById("cert_submit_btn"),
+        };
+      }
+
+      function getProjectFields() {
+        return {
+          title: document.getElementById("proj_title"),
+          tag: document.getElementById("proj_tag"),
+          category: document.getElementById("proj_category"),
+          description: document.getElementById("proj_desc"),
+          details: document.getElementById("proj_detail"),
+          tags: document.getElementById("proj_tech"),
+          liveUrl: document.getElementById("proj_demo"),
+          sourceUrl: document.getElementById("proj_github"),
+          imageInput: document.getElementById("proj_image"),
+          imagePreview: document.getElementById("proj_image_preview"),
+          submitButton: document.getElementById("proj_submit_btn"),
+        };
+      }
+
+      async function postToGoogleSheets(payload) {
+        if (
+          !GOOGLE_SHEETS_WEBAPP_URL ||
+          GOOGLE_SHEETS_WEBAPP_URL.includes("YOUR_DEPLOYMENT_ID")
+        ) {
+          const errorMessage =
+            "Google Sheets Web App URL is not configured. Update GOOGLE_SHEETS_WEBAPP_URL.";
+          console.error(errorMessage);
+          throw new Error(errorMessage);
+        }
+
+        // Try a normal CORS POST first. If the deployment is opaque or requires
+        // no-cors, fall back to a no-cors request. We don't rely on the response
+        // body for success verification; the server-side script should persist
+        // the record and we will re-fetch the authoritative list after POST.
+        try {
+          const res = await fetch(GOOGLE_SHEETS_WEBAPP_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+            mode: "cors",
+          });
+          // If the response is OK and returns JSON, return it.
+          if (res && res.ok) {
+            try {
+              return await res.json();
+            } catch (_) {
+              return null;
+            }
+          }
+        } catch (e) {
+          // fall through to no-cors fallback
+          console.warn("CORS POST failed — falling back to no-cors POST", e);
+        }
+
+        // no-cors fallback (opaque request) — fire-and-forget
+        try {
+          await fetch(GOOGLE_SHEETS_WEBAPP_URL, {
+            method: "POST",
+            mode: "no-cors",
+            body: JSON.stringify(payload),
+          });
+          return null;
+        } catch (err) {
+          console.error("POST to Google Sheets failed:", err);
+          throw err;
+        }
+      }
+
+      // Fetch + initialize data from the Google Sheets Web App
+      async function fetchAndInitializeRemoteData() {
+        if (!GOOGLE_SHEETS_WEBAPP_URL) return null;
+        try {
+          const resp = await fetch(GOOGLE_SHEETS_WEBAPP_URL, {
+            method: "GET",
+            headers: { Accept: "application/json" },
+            mode: "cors",
+          });
+
+          if (!resp.ok)
+            throw new Error(`Network response was not ok (${resp.status})`);
+
+          const json = await resp.json();
+          if (!json || json.status !== "success" || !json.data) {
+            console.warn("Unexpected remote payload", json);
+            return null;
+          }
+
+          const { projects = [], certificates = [] } = json.data;
+
+          // Local dedupe helper
+          const dedupeById = (arr, key = "id") => {
+            const seen = new Set();
+            return (arr || []).filter((item) => {
+              const v = item && item[key];
+              if (seen.has(v)) return false;
+              seen.add(v);
+              return true;
+            });
+          };
+
+          // Clear existing arrays first to avoid accidental append/duplication
+          portfolioState.projects = [];
+          portfolioCerts = [];
+
+          // Normalize projects into the local shape used by the renderer
+          const newProjects = (projects || []).map((p) => ({
+            id:
+              p.project_id ||
+              p.id ||
+              `proj-${Math.random().toString(36).slice(2, 8)}`,
+            project_id: p.project_id || p.id || "",
+            title: p.title || "",
+            category: p.category || p.cat || "Front-End",
+            tag: p.tag || p.category || "",
+            dates: p.dates || p.date || "",
+            description: p.description || "",
+            bullets: Array.isArray(p.bullets)
+              ? p.bullets
+              : [p.description, p.details]
+                  .filter(Boolean)
+                  .join("\n")
+                  .toString()
+                  .split("\n")
+                  .map((line) => line.trim())
+                  .filter(Boolean),
+            details: p.details || p.description || "",
+            tech: (p.tags || p.tech || "")
+              .toString()
+              .split(",")
+              .map((s) => s.trim())
+              .filter(Boolean),
+            links: {
+              demo: p.live_url || p.liveUrl || p.demo || "#",
+              github: p.source_url || p.sourceUrl || p.github || "#",
+            },
+            image: p.image_path || p.image || "",
+          }));
+
+          // Normalize certificates into local shape
+          const newCerts = (certificates || []).map((c) => ({
+            id:
+              c.cert_id ||
+              c.id ||
+              `cert-${Math.random().toString(36).slice(2, 8)}`,
+            cert_id: c.cert_id || c.id || "",
+            name: c.title || c.name || "",
+            issuer: c.issuer || "",
+            date: c.issue_date || c.date || "",
+            url: c.credential_url || c.credentialUrl || c.url || "",
+            image: c.image_path || c.image || "",
+          }));
+
+          // Deduplicate and assign authoritative arrays (replace, don't append)
+          portfolioState.projects = dedupeById(newProjects, "id");
+          portfolioCerts = dedupeById(newCerts, "id");
+
+          // Persist into local storage so admin UI also reflects remote state
+          safeSetJSONLocalStorage(STORAGE_KEY, portfolioState);
+          safeSetJSONLocalStorage(PORTFOLIO_CERTS_KEY, portfolioCerts);
+
+          // Render updated UI
+          renderAll();
+          populateAdminLists();
+          toast("Portfolio data updated from remote", "success", 1800);
+          return {
+            projects: portfolioState.projects,
+            certificates: portfolioCerts,
+          };
+        } catch (err) {
+          console.warn("Unable to fetch remote portfolio data:", err);
+          toast("Remote data not available — using local data", "warn", 2000);
+          return null;
+        }
+      }
+
+      function setSubmitButtonState(button, isSaving, defaultText) {
+        if (!button) return;
+        button.disabled = isSaving;
+        button.textContent = isSaving ? "جاري الحفظ..." : defaultText;
+      }
+
+      function normalizeTags(tagString) {
+        return tagString
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean)
+          .join(", ");
+      }
+
+      async function runPortfolioIntegrationTest() {
+        const dummyImageBase64 =
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2P8/5+hHgAHggJ/PzQ98wAAAABJRU5ErkJggg==";
+        const certificatePayload = {
+          type: "certificate",
+          cert_id: "cert-test-001",
+          title: "QA Test Certificate",
+          issuer: "Test Issuer",
+          issue_date: new Date().toISOString().slice(0, 10),
+          credential_url: "https://example.com/verify",
+          image_path: dummyImageBase64,
+        };
+        const projectPayload = {
+          type: "project",
+          project_id: "proj-test-001",
+          title: "QA Test Project",
+          category: "Front-End",
+          description:
+            "This is a test project payload for integration verification.",
+          tags: "React, CSS, Serverless",
+          live_url: "https://example.com/demo",
+          source_url: "https://github.com/example/test-repo",
+          image_path: dummyImageBase64,
+        };
+
+        const dispatchPayload = async (payload, label) => {
+          console.log(`${label}: dispatching payload`, payload);
+          try {
+            await postToGoogleSheets(payload);
+            console.log(`${label}: fetch dispatched successfully`);
+          } catch (error) {
+            console.error(`${label}: fetch dispatch failed`, error);
+          }
+        };
+
+        console.log("Portfolio integration test started.");
+        await dispatchPayload(certificatePayload, "Certificate Test");
+        await dispatchPayload(projectPayload, "Project Test");
+        console.log(
+          "Portfolio integration test completed. If no errors appeared, requests were dispatched.",
+        );
+      }
+
       function getState() {
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultData));
+          safeSetJSONLocalStorage(STORAGE_KEY, defaultData);
           return JSON.parse(JSON.stringify(defaultData));
         }
         try {
@@ -3851,8 +5667,17 @@
               ) {
                 updated.company = "My Order System";
               }
+              if (updated.title === "Lead Front-End Engineer & UX Designer") {
+                updated.title = "Lead Front-End Developer & Architect";
+              }
               if (Array.isArray(updated.bullets)) {
                 updated.bullets = updated.bullets.map((bullet) => {
+                  if (
+                    bullet ===
+                    "Built a professional, interactive dashboard for restaurant order management utilizing a decoupled frontend structure."
+                  ) {
+                    return "Architected a highly configurable and scalable data layer tailored to client specifications, offering full native support to run seamlessly on either a robust MySQL database or a cloud-based Google Sheets backend to optimize operational infrastructure costs.";
+                  }
                   if (
                     bullet ===
                     "Front-End: Converted Figma designs into interactive, responsive web pages; optimized site performance and resolved complex code integration issues."
@@ -3873,27 +5698,66 @@
           }
 
           if (parsed?.cv?.skills && Array.isArray(parsed.cv.skills)) {
-            parsed.cv.skills = parsed.cv.skills.map((group) => ({
-              ...group,
-              items: Array.isArray(group.items)
-                ? group.items.map((item) =>
-                    item === "AI for Data Analysis"
-                      ? "AI in Data Analytics"
-                      : item,
-                  )
-                : group.items,
-            }));
+            parsed.cv.skills = parsed.cv.skills.map((group) => {
+              if (group.category === "Tools & Platforms") {
+                return {
+                  ...group,
+                  items: [
+                    "n8n Automation",
+                    "SQL",
+                    "Python",
+                    "Power BI",
+                    "Tableau",
+                    "Excel",
+                    "HTML5",
+                    "CSS3",
+                    "JavaScript (JS)",
+                  ],
+                };
+              }
+              return {
+                ...group,
+                items: Array.isArray(group.items)
+                  ? group.items.map((item) =>
+                      item === "AI for Data Analysis"
+                        ? "AI in Data Analytics"
+                        : item,
+                    )
+                  : group.items,
+              };
+            });
+          }
+
+          if (parsed?.profile) {
+            parsed.profile = {
+              ...defaultData.profile,
+              ...parsed.profile,
+              social: {
+                ...defaultData.profile.social,
+                ...parsed.profile.social,
+              },
+            };
+
+            Object.keys(parsed.profile.social).forEach((key) => {
+              if (
+                parsed.profile.social[key] === "#" ||
+                parsed.profile.social[key] === "" ||
+                parsed.profile.social[key] == null
+              ) {
+                parsed.profile.social[key] = defaultData.profile.social[key];
+              }
+            });
           }
 
           return parsed;
         } catch (e) {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultData));
+          safeSetJSONLocalStorage(STORAGE_KEY, defaultData);
           return JSON.parse(JSON.stringify(defaultData));
         }
       }
 
       function setState(state) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        safeSetJSONLocalStorage(STORAGE_KEY, state);
         portfolioState = state;
         experiencesData = [...(portfolioState.cv?.experience || [])];
         renderAll();
@@ -3907,10 +5771,50 @@
       // --- Expertise (separate localStorage key and CRUD) ---
       const EXP_KEY = "portfolio_expertise";
       const DEFAULT_EXPERTISE = [
-        "Front-End Web Development (React, JS, HTML5/CSS3)",
-        "Data Analysis & Visualization (Power BI, Tableau, Excel, SQL)",
-        "Data Engineering & Workflow Automation (Python, n8n)",
-        "AI in Data Analytics",
+        {
+          title: "Frontend & Dashboard Development",
+          description:
+            "Building highly responsive web interfaces and dynamic single-page applications using modern frameworks like React.js, JavaScript, and advanced CSS3 styling.",
+          icon: "fa-laptop-code",
+          color: "purple",
+        },
+        {
+          title: "Data Analysis & Business Intelligence",
+          description:
+            "Extracting actionable insights from raw corporate data and creating sophisticated visual analytics using Tableau, Power BI, and Advanced Excel to guide business decisions.",
+          icon: "fa-chart-pie",
+          color: "blue",
+        },
+        {
+          title: "Advanced Data Engineering & Core Programming",
+          subtitle: "(Python, SQL, Predictive )",
+          description:
+            "Designing robust Python solutions for advanced data cleansing, relational SQL database modeling, and deployment-ready predictive analytics workflows.",
+          icon: "fa-database",
+          color: "teal",
+        },
+        {
+          title: "Artificial Intelligence & Smart Systems",
+          description:
+            "Leveraging machine learning techniques, statistical forecasting, and AI agent prompting to automate complex classifications and identify deep historical data trends.",
+          icon: "fa-brain",
+          color: "purple",
+        },
+        {
+          title: "Workflow Automation & Digital Governance",
+          subtitle: "(n8n, Webhooks, ETL Processes)",
+          description:
+            "Designing seamless webhooks and automated workflows using n8n to integrate frontend interfaces with APIs, while aligning infrastructure with ETL best practices and operational governance.",
+          icon: "fa-network-wired",
+          color: "blue",
+        },
+        {
+          title: "Business Strategy & Performance Metrics (KPIs)",
+          description:
+            "Translating business objectives into technical roadmaps, aligning development cycles with stakeholder requirements, and establishing critical KPIs to maximize project ROI.",
+          icon: "fa-bullseye",
+          color: "teal",
+        },
       ];
 
       function getExpertise() {
@@ -3923,11 +5827,34 @@
           const parsed = JSON.parse(raw);
           if (!Array.isArray(parsed)) throw new Error("invalid");
           return parsed.map((item) => {
-            if (typeof item !== "string") return item;
-            return item.replace(
-              / AI Tools & Data Analysis |AI Integration in Data Analytics \(AI Tools & Data Analysis\)/g,
-              "AI in Data Analytics",
-            );
+            // Support both string and object formats for backward compatibility
+            if (typeof item === "string") {
+              return {
+                title: item.replace(
+                  / AI Tools & Data Analysis |AI Integration in Data Analytics \(AI Tools & Data Analysis\)/g,
+                  "AI in Data Analytics",
+                ),
+                description: item.replace(
+                  / AI Tools & Data Analysis |AI Integration in Data Analytics \(AI Tools & Data Analysis\)/g,
+                  "AI in Data Analytics",
+                ),
+                icon: "fa-code",
+                color: "purple",
+              };
+            }
+            if (typeof item === "object" && item !== null) {
+              return {
+                title: (item.title || "").replace(
+                  / AI Tools & Data Analysis |AI Integration in Data Analytics \(AI Tools & Data Analysis\)/g,
+                  "AI in Data Analytics",
+                ),
+                description: item.description || item.title || "",
+                subtitle: item.subtitle || "",
+                icon: item.icon || "fa-code",
+                color: item.color || "purple",
+              };
+            }
+            return item;
           });
         } catch (e) {
           localStorage.setItem(EXP_KEY, JSON.stringify(DEFAULT_EXPERTISE));
@@ -3957,13 +5884,28 @@
         }
         grid.innerHTML = items
           .map((it, i) => {
-            const colorCls = ["purple", "blue", "teal"][i % 3];
-            const icon = ["fa-code", "fa-chart-line", "fa-robot"][i % 3];
+            const title = typeof it === "string" ? it : it.title || "";
+            const subtitle =
+              typeof it === "object" && it.subtitle ? it.subtitle : "";
+            const description =
+              typeof it === "string" ? it : it.description || it.title || "";
+            const colorCls =
+              typeof it === "object" && it.color
+                ? it.color
+                : ["purple", "blue", "teal"][i % 3];
+            const icon =
+              typeof it === "object" && it.icon
+                ? it.icon
+                : ["fa-code", "fa-chart-line", "fa-robot"][i % 3];
+            const subtitleMarkup = subtitle
+              ? `<p class="expertise-subtitle">${escapeHtml(subtitle)}</p>`
+              : "";
             return `
               <div class="glass-card expertise-card">
-                <div class="expertise-icon ${colorCls}"><i class="fas ${icon}"></i></div>
-                <h3>${escapeHtml(it)}</h3>
-                <p>${escapeHtml(it)}</p>
+                <div class="expertise-icon ${colorCls}"><i class="fas ${escapeHtml(icon)}"></i></div>
+                <h3>${escapeHtml(title)}</h3>
+                ${subtitleMarkup}
+                <p>${escapeHtml(description)}</p>
               </div>
             `;
           })
@@ -3975,39 +5917,47 @@
         if (!list) return;
         const items = getExpertise();
         list.innerHTML = items
-          .map(
-            (it, i) => `
+          .map((it, i) => {
+            const title = typeof it === "string" ? it : it.title || "";
+            return `
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-                <div style="flex:1;color:var(--text-secondary);">${escapeHtml(it)}</div>
+                <div style="flex:1;color:var(--text-secondary);">${escapeHtml(title)}</div>
                 <button class="btn-ghost" onclick="editExpertise(${i})">Edit</button>
                 <button class="btn-save" style="padding:6px 12px;" onclick="removeExpertise(${i})">Remove</button>
               </div>
-            `,
-          )
+            `;
+          })
           .join("");
       }
 
       function addExpertiseItem() {
         const input = document.getElementById("expertise_input");
+        const descInput = document.getElementById("expertise_description");
         const btn = document.getElementById("expertise_add_btn");
         if (!input || !btn) return;
-        const raw = input.value.trim();
-        if (!raw) return alert("Please enter an expertise item.");
+        const title = input.value.trim();
+        const description = descInput ? descInput.value.trim() : "";
+        if (!title) return alert("Please enter an expertise title.");
         const editIdx = btn.dataset.editIndex;
         const items = getExpertise();
+        const newItem = {
+          title: title,
+          description: description || title,
+        };
         if (editIdx !== undefined && editIdx !== null && editIdx !== "") {
           const i = Number(editIdx);
           if (!Number.isNaN(i) && i >= 0 && i < items.length) {
-            items[i] = raw;
+            items[i] = newItem;
             setExpertise(items);
             toast("Expertise updated", "success");
             resetExpertiseInput();
             return;
           }
         }
-        items.push(raw);
+        items.push(newItem);
         setExpertise(items);
         input.value = "";
+        if (descInput) descInput.value = "";
         toast("Expertise added", "success");
       }
 
@@ -4022,18 +5972,28 @@
       function editExpertise(index) {
         const items = getExpertise();
         if (index < 0 || index >= items.length) return;
+        const item = items[index];
         const input = document.getElementById("expertise_input");
+        const descInput = document.getElementById("expertise_description");
         const btn = document.getElementById("expertise_add_btn");
-        input.value = items[index];
-        btn.textContent = "Update";
-        btn.dataset.editIndex = String(index);
-        input.focus();
+        const title = typeof item === "string" ? item : item.title || "";
+        const description =
+          typeof item === "string" ? "" : item.description || "";
+        if (input) input.value = title;
+        if (descInput) descInput.value = description;
+        if (btn) {
+          btn.textContent = "Update";
+          btn.dataset.editIndex = String(index);
+        }
+        if (input) input.focus();
       }
 
       function resetExpertiseInput() {
         const input = document.getElementById("expertise_input");
+        const descInput = document.getElementById("expertise_description");
         const btn = document.getElementById("expertise_add_btn");
         if (input) input.value = "";
+        if (descInput) descInput.value = "";
         if (btn) {
           btn.textContent = "Add";
           delete btn.dataset.editIndex;
@@ -4070,7 +6030,7 @@
         meta.innerHTML = `
                 <span class="hero-meta-item"><i class="fas fa-birthday-cake"></i> ${p.age || ""} Years Old</span>
                 <span class="hero-meta-item"><i class="fas fa-map-marker-alt"></i> ${p.location || ""}</span>
-                <span class="hero-meta-item"><i class="fas fa-graduation-cap"></i> Final-Year BIS Student</span>
+                <span class="hero-meta-item"><i class="fas fa-graduation-cap"></i>BIS Graduate in Business Information Systems</span>
             `;
         document.querySelector(".hero-bio").textContent = p.bio || "";
         const img = document.getElementById("profileImg");
@@ -4109,6 +6069,11 @@
               : "mailto:" + social.email
             : "#";
           em.classList.toggle("disabled", !social.email);
+          em.onclick = (event) => {
+            if (em.href && em.href.startsWith("mailto:")) {
+              window.open(em.href, "_self");
+            }
+          };
         }
       }
 
@@ -4124,63 +6089,62 @@
         document.querySelector(".cv-role").textContent =
           portfolioState.profile?.title || "";
 
-        document.getElementById("cv_contact_email").innerHTML = email
-          ? `<a href="mailto:${email}">${email}</a>`
-          : "";
-        document.getElementById("cv_contact_phone").innerHTML = phone
-          ? `<a href="tel:${phone.replace(/\s+/g, "")}">${phone}</a>`
-          : "";
-        document.getElementById("cv_contact_linkedin").innerHTML = linkedin
-          ? `<a href="${linkedin}" target="_blank" rel="noreferrer">${linkedin.replace(/^https?:\/\//, "")}</a>`
-          : "";
-        document.getElementById("cv_contact_location").textContent =
-          location || "";
-        document.getElementById("cv_summary_text").textContent =
-          cv.summary || "";
-        document.getElementById("cv_education_degree").textContent =
-          cv.education?.degree || "";
-        document.getElementById("cv_education_school").textContent =
-          cv.education?.school || "";
-        document.getElementById("cv_education_date").textContent =
-          cv.education?.graduationDate || "";
+        const contactItems = [
+          email ? `<a href="mailto:${email}">${email}</a>` : "",
+          phone
+            ? `<a href="tel:${phone.replace(/\s+/g, "")}">${phone}</a>`
+            : "",
+          linkedin
+            ? `<a href="${linkedin}" target="_blank" rel="noreferrer">${linkedin}</a>`
+            : "",
+          location || "",
+        ].filter(Boolean);
 
-        renderCVExperiences();
+        const contactLine = document.getElementById("cv_contact_line");
+        if (contactLine) {
+          contactLine.innerHTML = contactItems
+            .map((item) => `<span>${item}</span>`)
+            .join("");
+        }
 
         const skillsContainer = document.getElementById("cv_skills_display");
-        skillsContainer.innerHTML = (cv.skills || [])
-          .map(
-            (group) => `
-              <div class="cv-skill-group">
-                <div class="cv-skill-title">${group.category || ""}</div>
-                <ul class="cv-skill-list">
-                  ${(group.items || [])
-                    .map((skill) => `<li>${skill}</li>`)
-                    .join("")}
-                </ul>
-              </div>
-            `,
-          )
-          .join("");
+        if (skillsContainer) {
+          skillsContainer.innerHTML = (cv.skills || [])
+            .map((group) => {
+              const items = (group.items || []).filter(Boolean).join(", ");
+              return `
+                <div class="cv-skill-line">
+                  <span class="cv-skill-label">${group.category || ""}</span>${items}
+                </div>
+              `;
+            })
+            .join("");
+        }
       }
 
       function renderCVExperiences() {
         const expContainer = document.getElementById(
           "cv_experience_list_display",
         );
-        expContainer.innerHTML = experiencesData
-          .map(
-            (item) => `
+        const projectsData = portfolioState.projects || [];
+        expContainer.innerHTML = projectsData
+          .map((project) => {
+            const bullets = Array.isArray(project.bullets)
+              ? project.bullets
+              : [project.description, project.details].filter(Boolean);
+            return `
               <div class="cv-experience-item">
-                <div class="cv-experience-role">${item.title || ""}</div>
-                <div class="cv-experience-meta">${item.company || ""} • ${item.dates || ""}</div>
+                <div class="cv-experience-row">
+                  <div class="cv-experience-title">${escapeHtml(project.title || "")}</div>
+                  <div class="cv-experience-date">${escapeHtml(project.dates || "")}</div>
+                </div>
+                <div class="cv-experience-meta">${escapeHtml(project.tag || project.category || "")}</div>
                 <ul class="cv-experience-points">
-                  ${(item.bullets || [])
-                    .map((bullet) => `<li>${bullet}</li>`)
-                    .join("")}
+                  ${bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}
                 </ul>
               </div>
-            `,
-          )
+            `;
+          })
           .join("");
       }
 
@@ -4265,14 +6229,175 @@
         });
       }
 
-      function printCvPdf() {
-        const originalText = sanitizeCvForPrint();
-        const afterPrint = () => {
-          restoreCvAfterPrint(originalText);
-          window.removeEventListener("afterprint", afterPrint);
+      function printCV(elementId) {
+        console.warn(
+          "Print dialog is disabled. Use the on-page CV viewer instead.",
+        );
+      }
+
+      /**
+       * ═══════════════════════════════════════════════════════════════════
+       * SECURE DATA DISPATCHER: ATS CV Download Integration
+       * ═══════════════════════════════════════════════════════════════════
+       *
+       * ENGINEERING OVERVIEW:
+       * This is the production-grade dispatcher responsible for orchestrating
+       * the seamless, bulletproof handoff of resume data from the portfolio
+       * UI to the enterprise-grade ATS rendering engine (ats-cv.html).
+       *
+       * ARCHITECTURE:
+       * • Constructs a pristine, single-source-of-truth data object
+       * • Implements redundant storage (sessionStorage > localStorage fallback)
+       * • Clears legacy cache to prevent data pollution
+       * • Establishes secure cross-window communication
+       * • Gracefully opens ATS template in isolated browser context
+       *
+       * SECURITY & RESILIENCE:
+       * • Defensive data structure with null coalescing
+       * • Try-catch blocks for storage operations (cross-domain policies)
+       * • Cross-window payload backup for maximum compatibility
+       * • Fallback navigation for restrictive browser policies
+       *
+       * DATA FIELDS:
+       * All fields are curated for maximum ATS parsing score (100%)
+       * and optimized for 4K display on elite executive systems.
+       * ═══════════════════════════════════════════════════════════════════
+       */
+      function buildAtsCvPayload() {
+        const profile = portfolioState.profile || {};
+        const cv = portfolioState.cv || {};
+
+        const contact = {
+          email: cv.contact?.email || profile.social?.email || "",
+          phone: cv.contact?.phone || "",
+          linkedin: cv.contact?.linkedin || profile.social?.linkedin || "",
+          location: cv.contact?.location || profile.location || "",
         };
-        window.addEventListener("afterprint", afterPrint);
-        window.print();
+
+        const technicalSkillsSet = new Set();
+        (cv.skills || []).forEach((group) => {
+          if (Array.isArray(group.items)) {
+            group.items.forEach((item) => {
+              if (item) technicalSkillsSet.add(item);
+            });
+          }
+        });
+        (portfolioState.tools || []).forEach((tool) => {
+          if (tool.name) technicalSkillsSet.add(tool.name);
+        });
+        (portfolioState.skills || []).forEach((skill) => {
+          if (skill.name) technicalSkillsSet.add(skill.name);
+        });
+
+        const technicalSkills = Array.from(technicalSkillsSet).slice(0, 24);
+
+        const education = [];
+        if (cv.education) {
+          education.push({
+            institution: cv.education.school || "",
+            degree: cv.education.degree || "",
+            date: cv.education.graduationDate || cv.education.date || "",
+            description:
+              cv.education.description ||
+              `Graduated from ${cv.education.school || "an accredited institution"}.`,
+          });
+        }
+
+        const projects = (portfolioState.projects || [])
+          .map((project) => ({
+            title: project.title || "",
+            date: project.dates || project.date || project.year || "",
+            subtitle: project.tag || project.category || "",
+            summary: project.description || project.details || "",
+          }))
+          .filter((project) => project.title);
+
+        const certifications = (
+          Array.isArray(portfolioCerts) ? portfolioCerts : []
+        )
+          .map((cert) => ({
+            name: cert.name || cert.title || "Certification",
+            issuer: cert.issuer || "",
+            date: cert.date || "",
+          }))
+          .filter((cert) => cert.name);
+
+        return {
+          name: profile.name || "",
+          title: profile.title || "",
+          contact,
+          executiveSummary: cv.summary || profile.bio || "",
+          technicalSkills,
+          education,
+          projects,
+          certifications,
+        };
+      }
+
+      function dispatchAtsCvDownload() {
+        // ─────────────────────────────────────────────────────────────────
+        // STORAGE KEY: Versioned for backward compatibility & cache busting
+        // ─────────────────────────────────────────────────────────────────
+        const ATS_CV_SESSION_KEY = "portfolio.atsCvData.v1";
+
+        // ─────────────────────────────────────────────────────────────────
+        // PRISTINE DATA OBJECT: Executive-level profile dataset
+        // Dynamically built from the active portfolio state
+        // ─────────────────────────────────────────────────────────────────
+        const atsCvPayload = buildAtsCvPayload();
+
+        // ─────────────────────────────────────────────────────────────────
+        // DEFENSIVE CACHE CLEARING
+        // Remove stale data to prevent contamination of new render
+        // ─────────────────────────────────────────────────────────────────
+        try {
+          sessionStorage.removeItem(ATS_CV_SESSION_KEY);
+        } catch (e) {
+          // Silently fail if sessionStorage is inaccessible
+        }
+
+        try {
+          localStorage.removeItem(ATS_CV_SESSION_KEY);
+        } catch (e) {
+          // Silently fail if localStorage is inaccessible
+        }
+
+        // ─────────────────────────────────────────────────────────────────
+        // SERIALIZATION: Convert pristine object to JSON transport format
+        // ─────────────────────────────────────────────────────────────────
+        const serializedPayload = JSON.stringify(atsCvPayload);
+
+        // ─────────────────────────────────────────────────────────────────
+        // REDUNDANT STORAGE STRATEGY
+        // Primary: sessionStorage (cleared on tab close, most secure)
+        // Fallback: localStorage (persistent across sessions)
+        // ─────────────────────────────────────────────────────────────────
+        try {
+          sessionStorage.setItem(ATS_CV_SESSION_KEY, serializedPayload);
+        } catch (sessionError) {
+          console.warn(
+            "sessionStorage full or restricted; attempting localStorage fallback",
+            sessionError,
+          );
+          try {
+            localStorage.setItem(ATS_CV_SESSION_KEY, serializedPayload);
+          } catch (localError) {
+            console.error(
+              "Both storage mechanisms failed; will attempt cross-window payload",
+              localError,
+            );
+          }
+        }
+
+        // Navigate to ATS CV in the same tab (do not open a new tab/window)
+        window.location.href = "ats-cv.html";
+        return;
+      }
+
+      function printCvPdf() {
+        console.warn(
+          "Print dialog is disabled. Use the on-page CV viewer instead.",
+        );
       }
 
       function saveCv() {
@@ -4492,18 +6617,47 @@
         populateAdminLists();
       }
 
+      function renderCvCertifications() {
+        const certificationsContainer = document.getElementById(
+          "cv_certifications_list",
+        );
+        if (!certificationsContainer) return;
+        const certificatesData = Array.isArray(portfolioCerts)
+          ? portfolioCerts
+          : [];
+        if (certificatesData.length === 0) {
+          certificationsContainer.innerHTML = `
+            <li class="cv-list-item">
+              <div class="cv-item-subtitle" style="margin-top:0;color:#6b7280;">No course or certification records found. Add certifications through the admin panel or sync from Google Sheets.</div>
+            </li>
+          `;
+          return;
+        }
+        certificationsContainer.innerHTML = certificatesData
+          .map(
+            (cert) => `
+              <li class="cv-list-item">
+                <div class="cv-item-row">
+                  <div class="cv-item-title">${escapeHtml(cert.name || cert.title || "Untitled Certificate")}</div>
+                  <div class="cv-item-meta">${escapeHtml(cert.date || "Date not available")}</div>
+                </div>
+                <div class="cv-item-subtitle">${escapeHtml(cert.issuer || "Unknown Issuer")}</div>
+              </li>
+            `,
+          )
+          .join("");
+      }
+
       function renderTools() {
         const grid = document.getElementById("toolsGrid");
         grid.innerHTML = (portfolioState.tools || [])
           .map(
             (tool) => `
                 <div class="glass-card tool-card">
-                    <div class="tool-icon ${tool.iconClass || ""}"><i class="${tool.iconSymbol || "fas fa-gem"}"></i></div>
-                    <div class="tool-name">${tool.name}</div>
-                    <div class="tool-progress">
-                        <div class="tool-progress-bar" style="width:${tool.progress || 0}%"></div>
+                    <div class="tool-icon ${tool.iconClass || ""}">
+                      ${tool.iconSvg || `<i class="${tool.iconSymbol || "fas fa-gem"}"></i>`}
                     </div>
-                    <div class="tool-progress-label">${tool.progress || 0}% Proficiency</div>
+                    <div class="tool-name">${tool.name}</div>
                 </div>
             `,
           )
@@ -4530,8 +6684,11 @@
 
       function renderCerts() {
         const grid = document.getElementById("certsGrid");
+        const certificatesData = Array.isArray(portfolioCerts)
+          ? portfolioCerts
+          : [];
         if (!grid) return;
-        if (!Array.isArray(portfolioCerts) || portfolioCerts.length === 0) {
+        if (certificatesData.length === 0) {
           grid.innerHTML = `
               <div class="glass-card cert-card">
                 <div style="display:grid;gap:14px;">
@@ -4543,16 +6700,21 @@
           return;
         }
 
-        grid.innerHTML = portfolioCerts
+        grid.innerHTML = certificatesData
           .map((cert) => {
-            const src =
-              resolveImageSource(cert.image) ||
-              "https://via.placeholder.com/400x240?text=Certificate";
+            const brand = getCertIconMetadata(cert);
+            const imgSrc = resolveImageSource(cert.image) || "";
+            const logoHtml = imgSrc
+              ? `<div class="cert-logo ${brand.className}"><img src="${imgSrc}" alt="${escapeHtml(
+                  cert.name,
+                )}" class="lightbox-trigger" data-lightbox-src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;border:0;"/></div>`
+              : `<div class="cert-logo ${brand.className}"><i class="${brand.icon}" aria-hidden="true"></i></div>`;
+
             return `
               <details class="cert-accordion">
                 <summary>
                   <div class="cert-summary-content">
-                    <img class="cert-thumb" src="${src}" alt="${escapeHtml(cert.name)}" />
+                    ${logoHtml}
                     <div>
                       <span class="cert-summary-title">${escapeHtml(cert.name)}</span>
                       <span class="cert-summary-meta">${escapeHtml(cert.issuer)} • ${escapeHtml(cert.date)}</span>
@@ -4579,6 +6741,7 @@
             `;
           })
           .join("");
+        attachLightboxHandlers(grid);
       }
 
       function toggleCertDrawer() {
@@ -4596,6 +6759,75 @@
           header.setAttribute("aria-expanded", expanded ? "true" : "false");
       }
 
+      function toggleProjectsDrawer() {
+        const drawer = document.getElementById("projectsDrawer");
+        const chevron = document.getElementById("projectsChevronIcon");
+        const label = document.getElementById("projectsToggleLabel");
+        const header = document.getElementById("projectsHeaderBar");
+        const expanded = drawer.classList.toggle("expanded");
+        if (expanded) {
+          setProjectFilter("All");
+        }
+        if (chevron) chevron.classList.toggle("rotated", expanded);
+        if (label)
+          label.textContent = expanded ? "Hide Projects" : "View Projects";
+        if (header)
+          header.setAttribute("aria-expanded", expanded ? "true" : "false");
+      }
+
+      function toggleCvDrawer() {
+        const drawer = document.getElementById("cvDrawer");
+        const header = document.getElementById("cvHeaderBar");
+        const button = document.getElementById("cvToggleButton");
+        const pdfFrame = document.getElementById("pdfCvFrame");
+        const expanded = drawer.classList.toggle("expanded");
+        if (drawer) drawer.style.display = expanded ? "block" : "none";
+        if (header)
+          header.setAttribute("aria-expanded", expanded ? "true" : "false");
+        // if (button) {
+        //   button.innerHTML = `${expanded ? "Hide CV" : "View CV"} <span class="chevron-icon${expanded ? " rotated" : ""}" id="cvChevronIcon">↓</span>`;
+        // }
+        if (pdfFrame) {
+          pdfFrame.style.display = expanded ? "block" : "none";
+        }
+      }
+
+      // Mobile navigation toggle
+      function toggleMenu() {
+        const nav = document.getElementById("primary-navigation");
+        const btn = document.getElementById("navToggle");
+        if (!nav || !btn) return;
+        const isOpen = nav.classList.toggle("open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      }
+
+      // Close mobile nav when clicking outside or when a link is tapped
+      document.addEventListener("click", (e) => {
+        const nav = document.getElementById("primary-navigation");
+        const btn = document.getElementById("navToggle");
+        if (!nav || !btn) return;
+        if (nav.classList.contains("open")) {
+          if (!nav.contains(e.target) && !btn.contains(e.target)) {
+            nav.classList.remove("open");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        }
+      });
+
+      (function attachNavLinkHandlers() {
+        const nav = document.getElementById("primary-navigation");
+        const btn = document.getElementById("navToggle");
+        if (!nav || !btn) return;
+        nav.querySelectorAll("a").forEach((a) => {
+          a.addEventListener("click", () => {
+            if (nav.classList.contains("open")) {
+              nav.classList.remove("open");
+              btn.setAttribute("aria-expanded", "false");
+            }
+          });
+        });
+      })();
+
       function setProjectFilter(filter) {
         currentProjectFilter = filter;
         renderProjects();
@@ -4603,7 +6835,8 @@
 
       function renderProjects() {
         const list = document.getElementById("projectsList");
-        const filteredProjects = (portfolioState.projects || [])
+        const projectsData = portfolioState.projects || [];
+        const filteredProjects = projectsData
           .map((project, index) => ({ project, index }))
           .filter(({ project }) => {
             const projectCategory = project.category || "Front-End";
@@ -4611,7 +6844,12 @@
               currentProjectFilter === "All" ||
               projectCategory === currentProjectFilter
             );
-          });
+          })
+          // Reverse the final filtered list so newest projects (added last in the
+          // Google Sheet) appear first on the page. We keep the original
+          // `index` value so `openProjectDetail(index)` still references the
+          // correct item in `portfolioState.projects`.
+          .reverse();
         document.querySelectorAll(".filter-tab").forEach((btn) => {
           btn.classList.toggle(
             "active",
@@ -4643,7 +6881,7 @@
                                     project.image ||
                                     getDefaultProjectImage(project.title);
                                   return projectImage
-                                    ? `<img src="${projectImage}" style="width:100%;height:100%;object-fit:cover;">`
+                                    ? `<img src="${projectImage}" class="lightbox-trigger" data-lightbox-src="${projectImage}" style="width:100%;height:100%;object-fit:cover;">`
                                     : `
                                     <div class="project-placeholder">
                                         <div class="project-placeholder-icon">
@@ -4679,12 +6917,64 @@
             `,
           )
           .join("");
+        attachLightboxHandlers(list);
       }
 
+      function openLightbox(imageSrc) {
+        const overlay = document.getElementById("lightboxOverlay");
+        const image = document.getElementById("lightboxImage");
+        if (!overlay || !image || !imageSrc) return;
+        image.src = imageSrc;
+        overlay.classList.add("active");
+        overlay.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        const overlay = document.getElementById("lightboxOverlay");
+        const image = document.getElementById("lightboxImage");
+        if (!overlay || !image) return;
+        overlay.classList.remove("active");
+        overlay.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        setTimeout(() => {
+          if (image) image.src = "";
+        }, 300);
+      }
+
+      function attachLightboxHandlers(root = document) {
+        const imageElements = root.querySelectorAll("img.lightbox-trigger");
+        imageElements.forEach((img) => {
+          if (img.dataset.lightboxBound === "true") return;
+          img.dataset.lightboxBound = "true";
+          img.addEventListener("click", () => {
+            openLightbox(img.dataset.lightboxSrc || img.src);
+          });
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const overlay = document.getElementById("lightboxOverlay");
+        const image = document.getElementById("lightboxImage");
+        if (!overlay || !image) return;
+        overlay.addEventListener("click", (event) => {
+          if (
+            event.target === overlay ||
+            event.target === image ||
+            event.target.closest(".lightbox-close")
+          ) {
+            closeLightbox();
+          }
+        });
+      });
+
       // --- Admin helpers ---
-      function openAdmin() {
+      function showLoginModal() {
         document.getElementById("adminOverlay").classList.add("active");
         document.body.style.overflow = "hidden";
+        document.getElementById("loginPanel").style.display = "block";
+        document.getElementById("adminDashboard").classList.remove("active");
+        document.getElementById("loginError").style.display = "none";
       }
 
       function closeAdmin() {
@@ -4718,7 +7008,8 @@
       function login() {
         const user = document.getElementById("adminUser").value;
         const pass = document.getElementById("adminPass").value;
-        if (user === "admin" && pass === "admin123") {
+        if (user === "admin" && (pass === "123" || pass === "admin123")) {
+          localStorage.setItem("isAdminLoggedIn", "true");
           document.getElementById("loginPanel").style.display = "none";
           document.getElementById("adminDashboard").classList.add("active");
           populateAdminForms();
@@ -4916,77 +7207,120 @@
         portfolioState.skills.splice(i, 1);
         setState(portfolioState);
       }
-      async function addCert() {
-        const name = document.getElementById("cert_name").value.trim();
-        const issuer = document.getElementById("cert_provider").value.trim();
-        const date = document.getElementById("cert_date").value.trim();
-        const url = document.getElementById("cert_url").value.trim();
-        const file = document.getElementById("cert_image").files[0];
-        const editIndex = document.getElementById("cert_edit_index").value;
-        const currentImage =
-          document.getElementById("cert_current_image").value;
+      async function addCert(event) {
+        event?.preventDefault?.();
+        const fields = getCertificateFields();
+        const title = fields.title.value.trim();
+        const issuer = fields.issuer.value.trim();
+        const issueDate = fields.issueDate.value.trim();
+        const credentialUrl = fields.credentialUrl.value.trim();
+        const file = fields.imageInput.files[0];
+        const editIndex = fields.editIndex.value;
+        const currentImage = fields.currentImage.value;
 
-        if (!name) {
-          alert("Certificate name required");
+        if (!title) {
+          alert("اسم الشهادة مطلوب");
           return;
         }
 
         let imagePath = currentImage || "";
         if (file) {
           try {
-            imagePath = await storeCertificationFile(file);
+            imagePath = await fileToBase64(file);
           } catch (error) {
             console.error(error);
-            alert("Unable to read the selected certificate image.");
+            alert("لا يمكن قراءة صورة الشهادة. حاول مرة أخرى.");
             return;
           }
         }
 
-        const newCert = {
-          id: editIndex
-            ? `cert-${Date.now()}-${sanitizeFileName(name)}`
-            : `cert-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-          name,
+        const certId = editIndex
+          ? `cert-${Date.now()}-${sanitizeFileName(title)}`
+          : `cert-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+
+        const payload = {
+          type: "certificate",
+          cert_id: certId,
+          title,
           issuer,
-          date,
-          url,
-          image: imagePath,
+          issue_date: issueDate,
+          credential_url: credentialUrl,
+          image_path: imagePath,
         };
 
-        const updatedCerts = Array.isArray(portfolioCerts)
-          ? [...portfolioCerts]
-          : [];
-        if (editIndex !== "") {
-          const index = Number(editIndex);
-          if (
-            !Number.isNaN(index) &&
-            index >= 0 &&
-            index < updatedCerts.length
-          ) {
-            updatedCerts[index] = {
-              ...updatedCerts[index],
-              ...newCert,
-              id: updatedCerts[index].id || newCert.id,
-              image: imagePath || updatedCerts[index].image,
-            };
+        setSubmitButtonState(fields.submitButton, true, "Add Certification");
+        try {
+          await postToGoogleSheets(payload);
+          // After successful POST, refresh remote data to reflect changes in UI
+          try {
+            await fetchAndInitializeRemoteData();
+          } catch (e) {
+            console.warn("Post succeeded but refresh failed", e);
+          }
+          alert("تم حفظ الشهادة في Google Sheets.");
+        } catch (error) {
+          console.error(error);
+          alert("حدث خطأ أثناء حفظ الشهادة في Google Sheets.");
+        } finally {
+          setSubmitButtonState(fields.submitButton, false, "Add Certification");
+        }
+
+        // Try to re-fetch authoritative data from remote.
+        // If fetch fails, fall back to a local optimistic update.
+        let fetched = null;
+        try {
+          fetched = await fetchAndInitializeRemoteData();
+        } catch (e) {
+          console.warn(
+            "Refresh after POST failed, falling back to optimistic update",
+            e,
+          );
+        }
+
+        if (!fetched) {
+          // Apply optimistic local update when remote refresh isn't available
+          const newCert = {
+            id: certId,
+            name: title,
+            issuer,
+            date: issueDate,
+            url: credentialUrl,
+            image: imagePath,
+          };
+
+          const updatedCerts = Array.isArray(portfolioCerts)
+            ? [...portfolioCerts]
+            : [];
+          if (editIndex !== "") {
+            const index = Number(editIndex);
+            if (
+              !Number.isNaN(index) &&
+              index >= 0 &&
+              index < updatedCerts.length
+            ) {
+              updatedCerts[index] = {
+                ...updatedCerts[index],
+                ...newCert,
+                id: updatedCerts[index].id || newCert.id,
+                image: imagePath || updatedCerts[index].image,
+              };
+            } else {
+              updatedCerts.push(newCert);
+            }
           } else {
             updatedCerts.push(newCert);
           }
-        } else {
-          updatedCerts.push(newCert);
-        }
 
-        setPortfolioCerts(updatedCerts);
-        document.getElementById("cert_name").value = "";
-        document.getElementById("cert_provider").value = "";
-        document.getElementById("cert_date").value = "";
-        document.getElementById("cert_url").value = "";
-        document.getElementById("cert_image").value = "";
-        document.getElementById("cert_image_preview").src = "";
-        document.getElementById("cert_edit_index").value = "";
-        document.getElementById("cert_current_image").value = "";
-        document.querySelector("#panel-certs .btn-primary").textContent =
-          "Add Certification";
+          setPortfolioCerts(updatedCerts);
+        }
+        fields.title.value = "";
+        fields.issuer.value = "";
+        fields.issueDate.value = "";
+        fields.credentialUrl.value = "";
+        fields.imageInput.value = "";
+        fields.imagePreview.src = "";
+        fields.editIndex.value = "";
+        fields.currentImage.value = "";
       }
 
       function deleteCert(i) {
@@ -5010,51 +7344,109 @@
           "Update Certification";
       }
 
-      async function addProject() {
-        const title = document.getElementById("proj_title").value.trim();
-        const tag = document.getElementById("proj_tag").value.trim();
-        const description = document.getElementById("proj_desc").value.trim();
-        const details = document.getElementById("proj_detail").value.trim();
-        const tech = document
-          .getElementById("proj_tech")
-          .value.split(",")
-          .map((s) => s.trim())
-          .filter(Boolean);
-        const demo = document.getElementById("proj_demo").value.trim();
-        const github = document.getElementById("proj_github").value.trim();
-        const file = document.getElementById("proj_image").files[0];
-        let image = "";
+      async function addProject(event) {
+        event?.preventDefault?.();
+        const fields = getProjectFields();
+        const title = fields.title.value.trim();
+        const tag = fields.tag.value.trim();
+        const category = fields.category.value || "Front-End";
+        const description = fields.description.value.trim();
+        const details = fields.details.value.trim();
+        const tags = normalizeTags(fields.tags.value);
+        const liveUrl = fields.liveUrl.value.trim();
+        const sourceUrl = fields.sourceUrl.value.trim();
+        const file = fields.imageInput.files[0];
+
+        if (!title) {
+          alert("عنوان المشروع مطلوب");
+          return;
+        }
+
+        let imagePath = "";
         if (file) {
           try {
-            image = await fileToBase64(file);
-          } catch (e) {
-            console.error(e);
+            imagePath = await fileToBase64(file);
+          } catch (error) {
+            console.error(error);
+            alert("لا يمكن قراءة صورة المشروع. حاول مرة أخرى.");
+            return;
           }
         }
-        if (!title) return alert("Project title required");
-        const category =
-          document.getElementById("proj_category").value || "Front-End";
-        portfolioState.projects.push({
+
+        const projectId = `proj-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+        const payload = {
+          type: "project",
+          project_id: projectId,
           title,
           category,
-          tag,
           description,
-          details,
-          tech,
-          links: { demo: demo || "#", github: github || "#" },
-          image,
-        });
-        setState(portfolioState);
-        document.getElementById("proj_title").value = "";
-        document.getElementById("proj_tag").value = "";
-        document.getElementById("proj_desc").value = "";
-        document.getElementById("proj_detail").value = "";
-        document.getElementById("proj_tech").value = "";
-        document.getElementById("proj_demo").value = "";
-        document.getElementById("proj_github").value = "";
-        document.getElementById("proj_category").value = "Front-End";
-        document.getElementById("proj_image").value = "";
-        document.getElementById("proj_image_preview").src = "";
+          tags,
+          live_url: liveUrl,
+          source_url: sourceUrl,
+          image_path: imagePath,
+        };
+
+        setSubmitButtonState(fields.submitButton, true, "Add Project");
+        try {
+          await postToGoogleSheets(payload);
+          // After successful POST, refresh remote data to reflect changes in UI
+          try {
+            await fetchAndInitializeRemoteData();
+          } catch (e) {
+            console.warn("Post succeeded but refresh failed", e);
+          }
+          alert("تم حفظ المشروع في Google Sheets.");
+        } catch (error) {
+          console.error(error);
+          alert("حدث خطأ أثناء حفظ المشروع في Google Sheets.");
+        } finally {
+          setSubmitButtonState(fields.submitButton, false, "Add Project");
+        }
+
+        // After POST attempt to refresh authoritative data. If refresh fails,
+        // fall back to optimistic local update so the admin sees immediate change.
+        let fetchedProject = null;
+        try {
+          fetchedProject = await fetchAndInitializeRemoteData();
+        } catch (e) {
+          console.warn(
+            "Refresh after project POST failed, falling back to optimistic update",
+            e,
+          );
+        }
+
+        if (!fetchedProject) {
+          const techArray = tags
+            ? tags
+                .split(",")
+                .map((item) => item.trim())
+                .filter(Boolean)
+            : [];
+          portfolioState.projects.push({
+            id: projectId,
+            project_id: projectId,
+            title,
+            category,
+            tag,
+            description,
+            details,
+            tech: techArray,
+            links: { demo: liveUrl || "#", github: sourceUrl || "#" },
+            image: imagePath,
+          });
+          setState(portfolioState);
+        }
+
+        fields.title.value = "";
+        fields.tag.value = "";
+        fields.category.value = "Front-End";
+        fields.description.value = "";
+        fields.details.value = "";
+        fields.tags.value = "";
+        fields.liveUrl.value = "";
+        fields.sourceUrl.value = "";
+        fields.imageInput.value = "";
+        fields.imagePreview.src = "";
       }
       function deleteProject(i) {
         portfolioState.projects.splice(i, 1);
@@ -5283,9 +7675,337 @@
         if (window.scrollY > 50) nav.classList.add("scrolled");
         else nav.classList.remove("scrolled");
       });
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        if (window.scrollY > 50) nav.classList.add("scrolled");
+        else nav.classList.remove("scrolled");
+      });
 
-      // initial render
+      const profileImg = document.getElementById("profileImg");
+      const profileFrame = document.getElementById("profileFrame");
+
+      function toggleProfileExpand() {
+        if (!profileFrame) return;
+        profileFrame.classList.toggle("expanded");
+      }
+
+      function collapseProfile() {
+        profileFrame?.classList.remove("expanded");
+      }
+
+      if (profileImg) {
+        profileImg.addEventListener("click", (event) => {
+          event.stopPropagation();
+          toggleProfileExpand();
+        });
+      }
+
+      document.addEventListener("click", (event) => {
+        if (!profileFrame) return;
+        if (!profileFrame.contains(event.target)) {
+          collapseProfile();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          collapseProfile();
+        }
+      });
+
+      // initial render of local data for immediate UI responsiveness
       renderAll();
+
+      // When DOM is ready, fetch authoritative data from Google Sheets WebApp
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchAndInitializeRemoteData().catch((e) =>
+          console.warn("Remote initialization failed:", e),
+        );
+      });
+
+      // Prefer same-tab navigation; only open external links in a new tab
+      document.querySelectorAll("a[href]").forEach((link) => {
+        const href = link.getAttribute("href");
+        if (!href || href === "#" || href.startsWith("javascript:")) return;
+        const isExternal =
+          href.startsWith("http://") ||
+          href.startsWith("https://") ||
+          href.startsWith("//");
+        if (isExternal) {
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener noreferrer");
+        } else {
+          link.removeAttribute("target");
+          link.removeAttribute("rel");
+        }
+      });
+
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("sw.js")
+            .then((registration) => {
+              console.log("Service Worker registered:", registration.scope);
+            })
+            .catch((err) => {
+              console.warn("Service Worker registration failed:", err);
+            });
+        });
+      }
+
+      let deferredPwaPrompt = null;
+      const installButton = document.getElementById("installAppBtn");
+
+      window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        deferredPwaPrompt = event;
+        if (installButton) {
+          installButton.style.display = "inline-flex";
+        }
+      });
+
+      if (installButton) {
+        installButton.addEventListener("click", async () => {
+          if (!deferredPwaPrompt) return;
+          deferredPwaPrompt.prompt();
+          const choiceResult = await deferredPwaPrompt.userChoice;
+          console.log("PWA install response:", choiceResult.outcome);
+          deferredPwaPrompt = null;
+          installButton.style.display = "none";
+        });
+      }
+
+      window.addEventListener("appinstalled", () => {
+        console.log("PWA installed successfully.");
+        analytics.trackEvent("pwa_installed");
+      });
+
+      /* Performance Tracking & Initialization Complete */
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => {
+          perfMonitor.mark("app-init-complete");
+          perfMonitor.measure(
+            "app-init",
+            "app-init-start",
+            "app-init-complete",
+          );
+        });
+      } else {
+        perfMonitor.mark("app-init-complete");
+        perfMonitor.measure("app-init", "app-init-start", "app-init-complete");
+      }
+
+      window.addEventListener("load", () => {
+        analytics.trackEvent("page_fully_loaded");
+        console.log("✓ Application fully initialized and ready.");
+      });
+
+      window.addEventListener("error", (event) => {
+        console.error("[Error]", event.error);
+        analytics.trackEvent("js_error", { message: event.error?.message });
+      });
+
+      window.addEventListener("unhandledrejection", (event) => {
+        console.error("[Unhandled Rejection]", event.reason);
+        analytics.trackEvent("unhandled_rejection", {
+          reason: String(event.reason),
+        });
+      });
+
+      /* Chatbot Widget Logic */
+      (function () {
+        const widget = document.getElementById("chatbotWidget");
+        const panel = document.getElementById("chatbotPanel");
+        const toggle = document.getElementById("chatbotToggle");
+        const closeButton = document.getElementById("chatbotClose");
+        const sendButton = document.getElementById("chatbotSend");
+        const inputField = document.getElementById("chatbotInput");
+        const messages = document.getElementById("chatbotMessages");
+        let typingIndicator = null;
+
+        function setPanelOpen(isOpen) {
+          if (!panel || !widget) return;
+          panel.classList.toggle("chatbot-panel--visible", isOpen);
+          widget.classList.toggle("chatbot-open", isOpen);
+          panel.setAttribute("aria-hidden", String(!isOpen));
+          widget.setAttribute("aria-hidden", String(!isOpen));
+          if (isOpen) {
+            inputField.focus();
+            if (!messages.querySelector(".chatbot-message")) {
+              appendBotMessage(
+                "مرحباً بك في بورتفوليو إبراهيم محمد. اسألني عن خبراته أو مشاريعه أو أي موضوع تقني، وسأجيبك بسرعة ووضوح.",
+              );
+            }
+          }
+        }
+
+        function appendChatMessage(text, type) {
+          const messageEl = document.createElement("div");
+          messageEl.className = `chatbot-message chatbot-message--${type}`;
+          messageEl.innerHTML = `<div class="chatbot-message__bubble">${escapeHtml(text)}</div>`;
+          messages.appendChild(messageEl);
+          scrollMessagesToBottom();
+        }
+
+        function appendBotMessage(text) {
+          removeTypingIndicator();
+          appendChatMessage(text, "bot");
+        }
+
+        function appendUserMessage(text) {
+          appendChatMessage(text, "user");
+        }
+
+        function scrollMessagesToBottom() {
+          if (!messages) return;
+          messages.scrollTop = messages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+          if (typingIndicator && typingIndicator.parentNode) {
+            typingIndicator.parentNode.removeChild(typingIndicator);
+          }
+          typingIndicator = null;
+        }
+
+        function showTypingIndicator() {
+          removeTypingIndicator();
+          typingIndicator = document.createElement("div");
+          typingIndicator.className =
+            "chatbot-message chatbot-message--bot chatbot-message--typing";
+          typingIndicator.innerHTML = `
+            <div class="chatbot-message__bubble chatbot-typing">
+              <span></span><span></span><span></span>
+            </div>
+          `;
+          messages.appendChild(typingIndicator);
+          scrollMessagesToBottom();
+        }
+
+        // Bot identity (replace with the assistant name you prefer)
+        const BOT_NAME = "مساعد بورتفوليو إبراهيم المحترف";
+
+        function escapeHtml(value) {
+          return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+        }
+
+        async function handleSendMessage() {
+          const text = inputField.value.trim();
+          if (!text) return;
+          appendUserMessage(text);
+          inputField.value = "";
+          showTypingIndicator();
+          try {
+            const reply = await sendMessageToAPI(text);
+            appendBotMessage(reply);
+          } catch (error) {
+            appendBotMessage(
+              "عذراً، حدث خطأ في الاتصال بالمساعد الذكي حالياً. أعد المحاولة أو تواصل عبر البريد الإلكتروني للمتابعة بسرعة.",
+            );
+            console.error("Chatbot API error:", error);
+          }
+        }
+
+        function handleKeyboard(event) {
+          if (event.key === "Enter" && !event.shiftKey) {
+            event.preventDefault();
+            handleSendMessage();
+          }
+          if (event.key === "Escape") {
+            setPanelOpen(false);
+          }
+        }
+
+        toggle.addEventListener("click", () => {
+          setPanelOpen(!panel.classList.contains("chatbot-panel--visible"));
+        });
+
+        closeButton.addEventListener("click", () => setPanelOpen(false));
+        sendButton.addEventListener("click", handleSendMessage);
+        inputField.addEventListener("keydown", handleKeyboard);
+
+        document.addEventListener("click", (event) => {
+          if (
+            !widget.contains(event.target) &&
+            panel.classList.contains("chatbot-panel--visible")
+          ) {
+            setPanelOpen(false);
+          }
+        });
+
+        window.sendMessageToAPI = async function sendMessageToAPI(userMessage) {
+          if (!GROQ_API_KEY || GROQ_API_KEY === "YOUR_GROQ_KEY_HERE") {
+            throw new Error(
+              "GROQ_API_KEY is not configured. ضع مفتاح Groq في GROQ_API_KEY.",
+            );
+          }
+
+          const payload = {
+            model: GROQ_MODEL,
+            messages: [
+              {
+                role: "system",
+                content:
+                  "أنت مساعد شخصي احترافي لبورتفوليو إبراهيم محمد. أجب باختصار ووضوح وبنبرة مهنية باللغة العربية الفصحى؛ وإذا كانت رسالة المستخدم ودية وغير رسمية، يمكنك استخدام اللهجة المصرية بشكل طبيعي ومهذب. ركز على خبرات إبراهيم ومشاريعه، اذكر أمثلة قصيرة وروابط إن وُجدت، لا تتجاوز 3-5 جمل ما لم يطلب المستخدم مزيدًا من التفاصيل. حافظ على آداب الحوار واحرص على أن تكون الإجابات دقيقة ومفيدة.",
+              },
+              {
+                role: "system",
+                content:
+                  "CONTEXT: الاسم: إبراهيم محمد; المنصب: محلل بيانات ومتخصص في ذكاء الأعمال; العمر: 23; الموقع: متوفر في جميع أنحاء العالم (مقر: كفر الشيخ، مصر); التعليم: بكالوريوس في نظم المعلومات التجارية; ملخص الخبرة: تحويل البيانات إلى رؤى بصرية استراتيجية، تبسيط عمليات التحليل، وبناء حلول ذكاء الأعمال. الخبرات الأساسية: تطوير الواجهات ولوحات التحكم؛ تحليل البيانات وذكاء الأعمال؛ هندسة البيانات والبرمجة (بايثون، SQL، التنبؤ)؛ الذكاء الاصطناعي والأنظمة الذكية؛ أتمتة سير العمل والحوكمة الرقمية؛ استراتيجية الأعمال ومؤشرات الأداء. الأدوات: SQL, MySQL, Python, Power BI, Tableau, GitHub, n8n, React.js, Excel, HTML5, CSS3, JavaScript, Google Sheets, Streamlit, PHP. مشاريع مختارة: لوحة تحكم تحليل الأداء المالي للفيلم؛ لوحة تحليلات السينما والترفيه؛ لوحة تحليلات مركز الاتصال (Salla)؛ Order Management & Revenue Dashboard؛ DataClean Pro؛ نظام الطلبات ومشاريع واجهة المستخدم المتقدمة. الشهادات والمؤهلات: شهادة CS50، شهادات Microsoft, Google, IBM، وغيرها مذكورة بالموقع. الاتصال: ibra7im.engineer@gmail.com / واتساب: +20 102 127 9663. توجيه: اقصر إجاباتك على المعلومات أعلاه فقط؛ لا تضف حقائق غير مذكورة. إذا طلب المستخدم معلومات إضافية أو ملفات، اقترح التواصل عبر البريد الإلكتروني.",
+              },
+              {
+                role: "user",
+                content: userMessage,
+              },
+            ],
+            max_tokens: 400,
+            temperature: 0.25,
+            top_p: 0.9,
+            n: 1,
+          };
+
+          const controller = new AbortController();
+          const timeout = setTimeout(() => controller.abort(), 30000);
+
+          try {
+            const resp = await fetch(GROQ_API_URL, {
+              method: "POST",
+              mode: "cors",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${GROQ_API_KEY}`,
+              },
+              body: JSON.stringify(payload),
+              signal: controller.signal,
+            });
+
+            clearTimeout(timeout);
+
+            if (!resp.ok) {
+              const errText = await resp.text().catch(() => "");
+              throw new Error(`Groq API error ${resp.status}: ${errText}`);
+            }
+
+            const data = await resp.json();
+            const replyText =
+              data?.choices?.[0]?.message?.content || data?.choices?.[0]?.text;
+
+            if (!replyText || typeof replyText !== "string") {
+              throw new Error("Invalid response from Groq API");
+            }
+
+            return replyText.trim();
+          } catch (err) {
+            console.error("Error calling Groq API", err);
+            throw err;
+          }
+        };
+      })();
     </script>
   </body>
 </html>

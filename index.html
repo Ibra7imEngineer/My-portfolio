@@ -9,6 +9,8 @@
     />
     <meta name="author" content="Ibrahim Muhamad" />
     <title>Ibrahim Muhamad | Data Analytics & BI Portfolio</title>
+    <meta name="theme-color" content="#0f1220" />
+    <link rel="manifest" href="manifest.json" />
     <meta
       property="og:title"
       content="Ibrahim Muhamad | Data Analytics & BI Portfolio"
@@ -2709,6 +2711,30 @@
           grid-template-columns: 1fr;
         }
       }
+      @media (max-width: 700px) {
+        .contact-grid {
+          padding: 22px;
+          gap: 18px;
+        }
+        .contact-details {
+          padding: 20px;
+          border-radius: 22px;
+        }
+        .contact-actions {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .contact-actions button {
+          width: 100%;
+        }
+        .contact-detail {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .contact-detail i {
+          min-width: 42px;
+        }
+      }
       .contact-form {
         display: flex;
         flex-direction: column;
@@ -3346,7 +3372,7 @@
                   <p class="cv-contact-line" id="cv_contact_line"></p>
                 </div>
                 <a
-                  href="CV/Ibrahim_Mohamed_CV.pdf"
+                  href="CV/ibrahim_mohamed_cv.pdf"
                   download="Ibrahim_Muhamad_CV.pdf"
                   >Download CV</a
                 >
@@ -3387,7 +3413,7 @@
                 <iframe
                   id="pdfCvFrame"
                   class="pdf-cv-iframe"
-                  src="CV/Ibrahim_Mohamed_CV.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  src="CV/ibrahim_mohamed_cv.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
                   title="Ibrahim Muhamad CV PDF"
                   loading="lazy"
                   scrolling="no"
@@ -7760,18 +7786,82 @@
         event.preventDefault();
         deferredPwaPrompt = event;
         if (installButton) {
-          installButton.style.display = "inline-flex";
+          // installButton.style.display = "inline-flex";
+          // installButton.textContent = "Install App";
         }
       });
 
+      // Show an in-page install suggestion on first visit (requires user tap to trigger native prompt)
+      document.addEventListener("DOMContentLoaded", () => {
+        const isIos = /iphone|ipad|ipod/.test(
+          navigator.userAgent.toLowerCase(),
+        );
+        const isStandalone =
+          window.matchMedia &&
+          window.matchMedia("(display-mode: standalone)").matches;
+        const alreadyInstalled =
+          window.navigator.standalone === true || isStandalone;
+        if (alreadyInstalled) return;
+
+        // If user hasn't dismissed before, show suggestion after a short delay
+        const dismissed = localStorage.getItem("pwa-install-dismissed");
+        if (dismissed) return;
+
+        setTimeout(() => {
+          if (!installButton) return;
+          // Prefer using the native beforeinstallprompt if available; otherwise show iOS instructions
+          if (deferredPwaPrompt) {
+            installButton.style.display = "inline-flex";
+            installButton.textContent = "";
+          } else if (isIos) {
+            installButton.style.display = "inline-flex";
+            installButton.textContent = "Add to Home Screen";
+          } else {
+            // Show a gentle suggestion for other browsers
+            // installButton.style.display = "inline-flex";
+            // installButton.textContent = "Install App";
+          }
+        }, 1400);
+
+        // If user closes/dismisses the install CTA, remember for a week
+        installButton.addEventListener("auxclick", () => {
+          localStorage.setItem("pwa-install-dismissed", Date.now());
+        });
+      });
+
+      // iOS / Safari fallback: show Install button with instructions
+      const isIos = /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
+      const isInStandalone =
+        window.matchMedia &&
+        window.matchMedia("(display-mode: standalone)").matches;
+      if (isIos && !isInStandalone && installButton) {
+        installButton.style.display = "inline-flex";
+        installButton.textContent = "Add to Home Screen";
+      }
+
       if (installButton) {
         installButton.addEventListener("click", async () => {
-          if (!deferredPwaPrompt) return;
-          deferredPwaPrompt.prompt();
-          const choiceResult = await deferredPwaPrompt.userChoice;
-          console.log("PWA install response:", choiceResult.outcome);
-          deferredPwaPrompt = null;
-          installButton.style.display = "none";
+          if (deferredPwaPrompt) {
+            deferredPwaPrompt.prompt();
+            const choiceResult = await deferredPwaPrompt.userChoice;
+            console.log("PWA install response:", choiceResult.outcome);
+            deferredPwaPrompt = null;
+            installButton.style.display = "none";
+            return;
+          }
+
+          const isIos = /iphone|ipad|ipod/.test(
+            navigator.userAgent.toLowerCase(),
+          );
+          if (isIos) {
+            alert(
+              "لتثبيت التطبيق على جهاز iOS: اضغط زر المشاركة في Safari ثم اختر 'Add to Home Screen' (إضافة إلى الشاشة الرئيسية).",
+            );
+          } else {
+            alert(
+              "التثبيت غير متاح تلقائياً الآن - استخدم قائمة المتصفح واختر 'Install' أو 'Add to Home Screen'، أو انتظر إشعار التثبيت.",
+            );
+          }
         });
       }
 
@@ -8005,6 +8095,98 @@
             throw err;
           }
         };
+      })();
+    </script>
+
+    <!-- Mobile scroll/perf helpers: fixes 100vh, early lazy-load, and reveal offsets -->
+    <script>
+      (function __perfHelpers() {
+        // 1) Mobile 100vh fix — set CSS variable based on innerHeight
+        const setVh = () =>
+          document.documentElement.style.setProperty(
+            "--vh",
+            window.innerHeight * 0.01 + "px",
+          );
+        let vhTo;
+        window.addEventListener(
+          "resize",
+          () => {
+            clearTimeout(vhTo);
+            vhTo = setTimeout(setVh, 120);
+          },
+          { passive: true },
+        );
+        window.addEventListener("orientationchange", () =>
+          setTimeout(setVh, 160),
+        );
+        setVh();
+
+        // 2) IntersectionObserver for early lazy-load + reveal
+        const lazySelector = "img[data-src], img.lazy-img";
+        const revealSelector = ".reveal";
+        const rootMargin = "400px 0px 400px 0px"; // load earlier during fast scrolls
+        const io = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              const el = entry.target;
+
+              // lazy-load images with data-src
+              if (el.tagName === "IMG" && el.dataset && el.dataset.src) {
+                const src = el.dataset.src;
+                if (src && el.src !== src) {
+                  const tmp = new Image();
+                  tmp.decoding = "async";
+                  tmp.src = src;
+                  tmp.onload = () => {
+                    el.src = src;
+                    el.classList.remove("blur-placeholder");
+                  };
+                  tmp.onerror = () => {
+                    el.classList.remove("blur-placeholder");
+                  };
+                }
+                obs.unobserve(el);
+                return;
+              }
+
+              // reveal animations
+              if (el.classList && el.classList.contains("reveal")) {
+                el.classList.add("in-view");
+                obs.unobserve(el);
+              }
+            });
+          },
+          { root: null, rootMargin, threshold: 0.05 },
+        );
+
+        // Observe existing nodes
+        document
+          .querySelectorAll(lazySelector + ", " + revealSelector)
+          .forEach((n) => io.observe(n));
+
+        // 3) Prefetch top project images to avoid late paints
+        (function prefetchTopImages() {
+          try {
+            const imgs = Array.from(
+              document.querySelectorAll("img[data-src]"),
+            ).slice(0, 3);
+            imgs.forEach((img) => {
+              const url = img.dataset.src;
+              if (!url) return;
+              const l = document.createElement("link");
+              l.rel = "preload";
+              l.as = "image";
+              l.href = url;
+              document.head.appendChild(l);
+            });
+          } catch (e) {
+            /* ignore */
+          }
+        })();
+
+        // 4) Ensure scroll handlers are passive where applied in the app (best-effort)
+        // No-op here — just a reminder: use {passive:true} on scroll/touch listeners in future code.
       })();
     </script>
   </body>

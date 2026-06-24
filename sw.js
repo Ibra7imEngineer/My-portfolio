@@ -4,6 +4,9 @@ const PRECACHE_URLS = [
   "index.html",
   "style.css",
   "manifest.json",
+  "images/icon-192.png",
+  "images/icon-512.png",
+  "images/icon-maskable.png",
   "images/profile.jpg",
   "images/profil1.jpg",
 ];
